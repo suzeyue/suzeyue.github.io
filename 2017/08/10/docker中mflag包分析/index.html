@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="docker golang," />
 
 
 
@@ -94,13 +94,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Code">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="mflag包实现了命令行中flag的解析。代码在docker/pkg/mflag/flag.go中。 ###用法  第一步：注册flag。flag的注册主要用到Bool（）、BoolVar（）、Int（）、IntVar（）、String（）、StringVar（）等方法。这些方法需要对应的数据类型（实现Value接口）：boolValue、intValue、stringValue。。。这些类型代码">
+<meta name="keywords" content="docker golang">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker中mflag包分析">
+<meta property="og:url" content="http://yoursite.com/2017/08/10/docker中mflag包分析/index.html">
 <meta property="og:site_name" content="Code">
+<meta property="og:description" content="mflag包实现了命令行中flag的解析。代码在docker/pkg/mflag/flag.go中。 ###用法  第一步：注册flag。flag的注册主要用到Bool（）、BoolVar（）、Int（）、IntVar（）、String（）、StringVar（）等方法。这些方法需要对应的数据类型（实现Value接口）：boolValue、intValue、stringValue。。。这些类型代码">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-10T07:12:48.182Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Code">
+<meta name="twitter:title" content="docker中mflag包分析">
+<meta name="twitter:description" content="mflag包实现了命令行中flag的解析。代码在docker/pkg/mflag/flag.go中。 ###用法  第一步：注册flag。flag的注册主要用到Bool（）、BoolVar（）、Int（）、IntVar（）、String（）、StringVar（）等方法。这些方法需要对应的数据类型（实现Value接口）：boolValue、intValue、stringValue。。。这些类型代码">
 
 
 
@@ -129,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/10/docker中mflag包分析/"/>
 
 
 
 
 
-  <title>Code</title>
+  <title>docker中mflag包分析 | Code</title>
   
 
 
@@ -154,9 +159,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -249,9 +252,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -281,9 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/10/docker中mflag包分析/" itemprop="url">docker中mflag包分析</a></h1>
+          <h1 class="post-title" itemprop="name headline">docker中mflag包分析</h1>
         
 
         <div class="post-meta">
@@ -333,9 +334,7 @@
       
 
       
-        
-          
-            <p>mflag包实现了命令行中flag的解析。<br>代码在docker/pkg/mflag/flag.go中。</p>
+        <p>mflag包实现了命令行中flag的解析。<br>代码在docker/pkg/mflag/flag.go中。</p>
 <p>###用法</p>
 <ul>
 <li>第一步：注册flag。<br>flag的注册主要用到Bool（）、BoolVar（）、Int（）、IntVar（）、String（）、StringVar（）等方法。<br>这些方法需要对应的数据类型（实现Value接口）：boolValue、intValue、stringValue。。。这些类型代码中以定义好。<br>同样的我们可以自定义数据类型进行注册解析，此类型必须满足Value接口，然后调用<figure class="highlight plain"><figcaption><span>Value, names []string, usage string)```方法注册（第一个参数为Value）。</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- 第二步：解析flag。</div><div class="line">在所有flag注册完毕之后，调用```Parse(arguments []string)```将arguments解析到定义好的flag里。</div><div class="line">### 主要的数据结构</div><div class="line">#### Value：</div><div class="line">Value接口是用于将动态值保存到一个flag里</div></pre></td></tr></table></figure></li>
@@ -358,8 +357,6 @@
 <p>// CommandLine是默认命令行flag集，用于解析os.Args。包水平的函数·如BoolVar等都是对其方法的封装。<br>var CommandLine = NewFlagSet(os.Args[0], ExitOnError)  //FlagSet.name,  FlagSet.errorHanding<br>这里主要看一下Parse(),可以看到它解析的是os.Args[1:]<br>func Parse() {<br>   // Ignore errors; CommandLine is set for ExitOnError.<br>   CommandLine.Parse(os.Args[1:])<br>}<br>```</p>
 <p>代码中的其它部分这里就不做分析。</p>
 
-          
-        
       
     </div>
     
@@ -374,14 +371,20 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/docker-golang/" rel="tag"># docker golang</a>
+          
+        </div>
+      
+
+      
+      
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -391,10 +394,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -402,6 +406,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -602,10 +610,10 @@
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
