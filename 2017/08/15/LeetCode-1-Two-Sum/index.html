@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="Code">
 <meta property="og:description" content="1234567891011121314151617181920212223242526package leetcode//Given an array of integers, return indices of the two numbers such that they add up to a specific target.//You may assume that each input w">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-15T05:48:44.162Z">
+<meta property="og:updated_time" content="2017-08-16T02:37:16.104Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode-1.Two Sum">
 <meta name="twitter:description" content="1234567891011121314151617181920212223242526package leetcode//Given an array of integers, return indices of the two numbers such that they add up to a specific target.//You may assume that each input w">
@@ -334,7 +334,7 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">package leetcode</div><div class="line"></div><div class="line">//Given an array of integers, return indices of the two numbers such that they add up to a specific target.</div><div class="line">//You may assume that each input would have exactly one solution, and you may not use the same element twice.</div><div class="line">//</div><div class="line">//Example:</div><div class="line">//Given nums = [2, 7, 11, 15], target = 9,</div><div class="line">//Because nums[0] + nums[1] = 2 + 7 = 9,</div><div class="line">//return [0, 1].</div><div class="line">func twoSum(nums []int, target int) []int &#123;</div><div class="line"></div><div class="line">    targetMap := make(map[int]int)</div><div class="line">    result := make([]int, 2)</div><div class="line"></div><div class="line">    for i, v := range nums &#123;</div><div class="line">        if index, ok := targetMap[target - v]; ok &#123;</div><div class="line">            result[0] = index</div><div class="line">            result[1] = i</div><div class="line">            break</div><div class="line">        &#125; else &#123;</div><div class="line">            targetMap[v] = i</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return result</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">package leetcode</div><div class="line"></div><div class="line">//Given an array of integers, return indices of the two numbers such that they add up to a specific target.</div><div class="line">//You may assume that each input would have exactly one solution, and you may not use the same element twice.</div><div class="line">//</div><div class="line">//Example:</div><div class="line">//Given nums = [2, 7, 11, 15], target = 9,</div><div class="line">//Because nums[0] + nums[1] = 2 + 7 = 9,</div><div class="line">//return [0, 1].</div><div class="line">func TwoSum(nums []int, target int) []int &#123;</div><div class="line"></div><div class="line">    targetMap := make(map[int]int)</div><div class="line">    result := make([]int, 2)</div><div class="line"></div><div class="line">    for i, v := range nums &#123;</div><div class="line">        if index, ok := targetMap[target - v]; ok &#123;</div><div class="line">            result[0] = index</div><div class="line">            result[1] = i</div><div class="line">            break</div><div class="line">        &#125; else &#123;</div><div class="line">            targetMap[v] = i</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return result</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -376,6 +376,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/16/LeetCode-2-Add-Two-Numbers/" rel="prev" title="LeetCode-2.Add Two Numbers">
+                LeetCode-2.Add Two Numbers <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -443,7 +447,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
