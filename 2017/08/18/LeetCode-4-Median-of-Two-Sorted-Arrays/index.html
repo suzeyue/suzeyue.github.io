@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152package leetcode//You are given two non-empty linked lists representing two non-negative integers.//The d">
+<meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455package leetcode//There are two sorted arrays nums1 and nums2 of size m and n respectively.//Find t">
 <meta name="keywords" content="LeetCode,golang">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode-2.Add Two Numbers">
-<meta property="og:url" content="http://yoursite.com/2017/08/16/LeetCode-2-Add-Two-Numbers/index.html">
+<meta property="og:title" content="LeetCode-4.Median of Two Sorted Arrays">
+<meta property="og:url" content="http://yoursite.com/2017/08/18/LeetCode-4-Median-of-Two-Sorted-Arrays/index.html">
 <meta property="og:site_name" content="Code">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152package leetcode//You are given two non-empty linked lists representing two non-negative integers.//The d">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455package leetcode//There are two sorted arrays nums1 and nums2 of size m and n respectively.//Find t">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-16T02:36:01.535Z">
+<meta property="og:updated_time" content="2017-08-18T08:13:53.126Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode-2.Add Two Numbers">
-<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152package leetcode//You are given two non-empty linked lists representing two non-negative integers.//The d">
+<meta name="twitter:title" content="LeetCode-4.Median of Two Sorted Arrays">
+<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455package leetcode//There are two sorted arrays nums1 and nums2 of size m and n respectively.//Find t">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/16/LeetCode-2-Add-Two-Numbers/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/18/LeetCode-4-Median-of-Two-Sorted-Arrays/"/>
 
 
 
 
 
-  <title>LeetCode-2.Add Two Numbers | Code</title>
+  <title>LeetCode-4.Median of Two Sorted Arrays | Code</title>
   
 
 
@@ -267,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/16/LeetCode-2-Add-Two-Numbers/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/18/LeetCode-4-Median-of-Two-Sorted-Arrays/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="su-42">
@@ -284,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode-2.Add Two Numbers</h1>
+          <h1 class="post-title" itemprop="name headline">LeetCode-4.Median of Two Sorted Arrays</h1>
         
 
         <div class="post-meta">
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-16T10:20:43+08:00">
-                2017-08-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-18T16:09:21+08:00">
+                2017-08-18
               </time>
             
 
@@ -334,12 +334,7 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">package leetcode</div><div class="line"></div><div class="line"></div><div class="line">//You are given two non-empty linked lists representing two non-negative integers.</div><div class="line">//The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</div><div class="line">//You may assume the two numbers do not contain any leading zero, except the number 0 itself.</div><div class="line"></div><div class="line">//Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)</div><div class="line">//Output: 7 -&gt; 0 -&gt; 8</div><div class="line"></div><div class="line"></div><div class="line">type ListNode struct &#123;</div><div class="line">    Val int</div><div class="line">    Next *ListNode</div><div class="line">&#125;</div><div class="line"></div><div class="line">func AddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode &#123;</div><div class="line">    result := new(ListNode)</div><div class="line">    p := result</div><div class="line">    decade := 0</div><div class="line">    </div><div class="line">    for l1 != nil &amp;&amp; l2!= nil &#123;</div><div class="line">        sum := decade + l1.Val + l2.Val</div><div class="line">        p.Next = &amp;ListNode&#123;Val: sum%10&#125;</div><div class="line">        decade = sum / 10</div><div class="line">        p = p.Next</div><div class="line">        l1 = l1.Next</div><div class="line">        l2 = l2.Next</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    for l1 != nil &#123;</div><div class="line">        sum := decade + l1.Val</div><div class="line">        p.Next = &amp;ListNode&#123;Val: sum%10&#125;</div><div class="line">        decade = sum / 10</div><div class="line">        p = p.Next</div><div class="line">        l1 = l1.Next</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    for l2 != nil &#123;</div><div class="line">        sum := decade + l2.Val</div><div class="line">        p.Next = &amp;ListNode&#123;Val: sum%10&#125;</div><div class="line">        decade = sum / 10</div><div class="line">        p = p.Next</div><div class="line">        l2 = l2.Next</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    if decade &gt; 0 &#123;</div><div class="line">        p.Next = &amp;ListNode&#123;Val: decade&#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return result.Next</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ol>
-<li>进位</li>
-<li>当两个链表长度不一致</li>
-<li>当处理完最后一个节点，但仍需进一位</li>
-</ol>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">package leetcode</div><div class="line"></div><div class="line">//There are two sorted arrays nums1 and nums2 of size m and n respectively.</div><div class="line">//Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).</div><div class="line">//</div><div class="line">//Example 1:</div><div class="line">//nums1 = [1, 3]</div><div class="line">//nums2 = [2]</div><div class="line">//</div><div class="line">//The median is 2.0</div><div class="line">//</div><div class="line">//Example 2:</div><div class="line">//nums1 = [1, 2]</div><div class="line">//nums2 = [3, 4]</div><div class="line">//</div><div class="line">//The median is (2 + 3)/2 = 2.5</div><div class="line"></div><div class="line">func FindMedianSortedArrays(nums1 []int, nums2 []int) float64 &#123;</div><div class="line">    lenTotal := (len(nums1) + len(nums2))</div><div class="line">    </div><div class="line">    if i := lenTotal % 2; i == 1 &#123;</div><div class="line">        return getKth(nums1, nums2, lenTotal / 2 + 1)</div><div class="line">    &#125; else &#123;</div><div class="line">        return (getKth(nums1, nums2, lenTotal / 2) + getKth(nums1, nums2, lenTotal / 2 + 1)) / 2</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">func getKth(nums1, nums2 []int, k int) float64 &#123;</div><div class="line">    len1, len2 := len(nums1), len(nums2)</div><div class="line">    if len1 &gt; len2 &#123;</div><div class="line">        return getKth(nums2, nums1, k)</div><div class="line">    &#125;</div><div class="line">    if len1 == 0 &#123;</div><div class="line">        return float64(nums2[k - 1])</div><div class="line">    &#125;</div><div class="line">    if k == 1 &#123;</div><div class="line">        return float64(min(nums1[0], nums2[0]))</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    i := min(len1, k / 2)</div><div class="line">    j := min(len2, k / 2)</div><div class="line">    if nums1[i - 1] &gt; nums2[j - 1] &#123;</div><div class="line">        return getKth(nums1, nums2[j:], k - j)</div><div class="line">    &#125; else &#123;</div><div class="line">        return getKth(nums1[i:], nums2, k - i)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">func min(x, y int) int &#123;</div><div class="line">    if x &lt; y &#123;</div><div class="line">        return x</div><div class="line">    &#125; else &#123;</div><div class="line">        return y</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -372,8 +367,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/15/LeetCode-1-Two-Sum/" rel="next" title="LeetCode-1.Two Sum">
-                <i class="fa fa-chevron-left"></i> LeetCode-1.Two Sum
+              <a href="/2017/08/17/LeetCode-3-Longest-Substring-Without-Repeating-Characters/" rel="next" title="LeetCode-3.Longest Substring Without Repeating Characters">
+                <i class="fa fa-chevron-left"></i> LeetCode-3.Longest Substring Without Repeating Characters
               </a>
             
           </div>
@@ -381,10 +376,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/17/LeetCode-3-Longest-Substring-Without-Repeating-Characters/" rel="prev" title="LeetCode-3.Longest Substring Without Repeating Characters">
-                LeetCode-3.Longest Substring Without Repeating Characters <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
