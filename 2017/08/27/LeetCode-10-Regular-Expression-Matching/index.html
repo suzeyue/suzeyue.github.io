@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="12345678910111213141516171819202122232425262728293031package leetcode//The string &amp;quot;PAYPALISHIRING&amp;quot; is written in a zigzag pattern on a given number of rows like this: (you may want to displa">
+<meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849package leetcode//Implement regular expression matching with support for &amp;apos;.&amp;apos; and &amp;apos;*&amp;apos;.////&amp;a">
 <meta name="keywords" content="golang,LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode-6.ZigZag Conversion">
-<meta property="og:url" content="http://yoursite.com/2017/08/20/LeetCode-6-ZigZag-Conversion/index.html">
+<meta property="og:title" content="LeetCode-10.Regular Expression Matching">
+<meta property="og:url" content="http://yoursite.com/2017/08/27/LeetCode-10-Regular-Expression-Matching/index.html">
 <meta property="og:site_name" content="Code">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728293031package leetcode//The string &amp;quot;PAYPALISHIRING&amp;quot; is written in a zigzag pattern on a given number of rows like this: (you may want to displa">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849package leetcode//Implement regular expression matching with support for &amp;apos;.&amp;apos; and &amp;apos;*&amp;apos;.////&amp;a">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-20T08:02:23.296Z">
+<meta property="og:updated_time" content="2017-08-27T08:36:27.453Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode-6.ZigZag Conversion">
-<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031package leetcode//The string &amp;quot;PAYPALISHIRING&amp;quot; is written in a zigzag pattern on a given number of rows like this: (you may want to displa">
+<meta name="twitter:title" content="LeetCode-10.Regular Expression Matching">
+<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849package leetcode//Implement regular expression matching with support for &amp;apos;.&amp;apos; and &amp;apos;*&amp;apos;.////&amp;a">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/20/LeetCode-6-ZigZag-Conversion/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/27/LeetCode-10-Regular-Expression-Matching/"/>
 
 
 
 
 
-  <title>LeetCode-6.ZigZag Conversion | Code</title>
+  <title>LeetCode-10.Regular Expression Matching | Code</title>
   
 
 
@@ -267,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/20/LeetCode-6-ZigZag-Conversion/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/27/LeetCode-10-Regular-Expression-Matching/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="su-42">
@@ -284,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode-6.ZigZag Conversion</h1>
+          <h1 class="post-title" itemprop="name headline">LeetCode-10.Regular Expression Matching</h1>
         
 
         <div class="post-meta">
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-20T15:44:45+08:00">
-                2017-08-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-27T16:34:17+08:00">
+                2017-08-27
               </time>
             
 
@@ -334,8 +334,7 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">package leetcode</div><div class="line"></div><div class="line">//The string &quot;PAYPALISHIRING&quot; is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)</div><div class="line">//</div><div class="line">//P   A   H   N</div><div class="line">//A P L S I I G</div><div class="line">//Y   I   R</div><div class="line">//And then read line by line: &quot;PAHNAPLSIIGYIR&quot;</div><div class="line">//Write the code that will take a string and make this conversion given a number of rows:</div><div class="line">//</div><div class="line">//string convert(string text, int nRows);</div><div class="line">//convert(&quot;PAYPALISHIRING&quot;, 3) should return &quot;PAHNAPLSIIGYIR&quot;.</div><div class="line"></div><div class="line">func Convert(s string, numRows int) string &#123;</div><div class="line">    if numRows &lt;= 1 &#123;</div><div class="line">        return s</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    var result []byte</div><div class="line">    size := 2 * numRows - 2</div><div class="line">    for i := 0; i &lt; numRows; i++ &#123;</div><div class="line">        for j := i; j &lt; len(s); j += size &#123;</div><div class="line">            result = append(result, s[j])</div><div class="line">            if i != 0 &amp;&amp; i != numRows - 1 &amp;&amp; j + size - 2*i &lt; len(s) &#123;</div><div class="line">                result = append(result, s[j + size - 2*i])</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return string(result)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这道题就是找规律。 <strong>2*numRows-2</strong> 是关键，然后就是每行（除首尾行）的 <strong>j + size - 2 * i</strong> 。</p>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">package leetcode</div><div class="line"></div><div class="line">//Implement regular expression matching with support for &apos;.&apos; and &apos;*&apos;.</div><div class="line">//</div><div class="line">//&apos;.&apos; Matches any single character.</div><div class="line">//&apos;*&apos; Matches zero or more of the preceding element.</div><div class="line">//</div><div class="line">//The matching should cover the entire input string (not partial).</div><div class="line">//</div><div class="line">//The function prototype should be:</div><div class="line">//bool isMatch(const char *s, const char *p)</div><div class="line">//</div><div class="line">//Some examples:</div><div class="line">//isMatch(&quot;aa&quot;,&quot;a&quot;) → false</div><div class="line">//isMatch(&quot;aa&quot;,&quot;aa&quot;) → true</div><div class="line">//isMatch(&quot;aaa&quot;,&quot;aa&quot;) → false</div><div class="line">//isMatch(&quot;aa&quot;, &quot;a*&quot;) → true</div><div class="line">//isMatch(&quot;aa&quot;, &quot;.*&quot;) → true</div><div class="line">//isMatch(&quot;ab&quot;, &quot;.*&quot;) → true</div><div class="line">//isMatch(&quot;aab&quot;, &quot;c*a*b&quot;) → true</div><div class="line"></div><div class="line">func IsMatch(s string, p string) bool &#123;</div><div class="line">    m, n := len(s), len(p)</div><div class="line">    dp := make([][]bool, m + 1)</div><div class="line">    for i:= 0; i &lt;= m; i++ &#123;</div><div class="line">        dp[i] = make([]bool, n + 1)</div><div class="line">    &#125;</div><div class="line">    dp[0][0] = true</div><div class="line">    </div><div class="line">    for i := 1; i &lt;= m; i++ &#123;</div><div class="line">            dp[i][0] = false</div><div class="line">    &#125;</div><div class="line">        </div><div class="line">    for j := 1; j &lt;= n; j++ &#123;</div><div class="line">        dp[0][j] = j &gt; 1 &amp;&amp; &apos;*&apos; == p[j - 1] &amp;&amp; dp[0][j - 2]</div><div class="line">    &#125;        </div><div class="line">        </div><div class="line">    for i := 1; i &lt;= m; i++ &#123;</div><div class="line">        for j := 1; j &lt;= n; j++ &#123;</div><div class="line">            if p[j - 1] != &apos;*&apos; &#123;</div><div class="line">                dp[i][j] = dp[i - 1][j - 1] &amp;&amp; (s[i - 1] == p[j - 1] || &apos;.&apos; == p[j - 1])</div><div class="line">            &#125; else &#123;</div><div class="line">                dp[i][j] = dp[i][j - 2] || (s[i - 1] == p[j - 2] || &apos;.&apos; == p[j - 2]) &amp;&amp; dp[i - 1][j]</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return dp[m][n]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -368,8 +367,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/19/LeetCode-5-Longest-Palindromic-Substring/" rel="next" title="LeetCode-5.Longest Palindromic Substring">
-                <i class="fa fa-chevron-left"></i> LeetCode-5.Longest Palindromic Substring
+              <a href="/2017/08/24/Docker-1-12源码分析-Docker-Client/" rel="next" title="Docker 1.12源码分析 -- Docker Client">
+                <i class="fa fa-chevron-left"></i> Docker 1.12源码分析 -- Docker Client
               </a>
             
           </div>
@@ -377,10 +376,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/21/LeetCode-7-Reverse-Integer/" rel="prev" title="LeetCode-7.Reverse Integer">
-                LeetCode-7.Reverse Integer <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
