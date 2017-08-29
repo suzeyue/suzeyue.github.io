@@ -264,6 +264,129 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/29/LeetCode-12-Integer-to-Roman/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="su-42">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Code">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/29/LeetCode-12-Integer-to-Roman/" itemprop="url">LeetCode-12.Integer to Roman</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-29T11:02:28+08:00">
+                2017-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">package leetcode</div><div class="line"></div><div class="line">//Given an integer, convert it to a roman numeral.</div><div class="line">//Input is guaranteed to be within the range from 1 to 3999.</div><div class="line"></div><div class="line">func IntToRoman(num int) string &#123;</div><div class="line">    var roman = []byte&#123;&apos;M&apos;, &apos;D&apos;, &apos;C&apos;, &apos;L&apos;, &apos;X&apos;, &apos;V&apos;, &apos;I&apos;&#125;</div><div class="line">    var value = []int&#123;1000, 500, 100, 50, 10, 5, 1,&#125;</div><div class="line">    var result []byte</div><div class="line">    for i := 0 ; i &lt; 7 ; i += 2 &#123;</div><div class="line">        x := num / value[i]</div><div class="line">        switch &#123;</div><div class="line">            case x == 9: &#123;</div><div class="line">                result = append(result, roman[i])</div><div class="line">                result = append(result, roman[i - 2])</div><div class="line">            &#125;</div><div class="line">            case x &gt; 4: &#123;</div><div class="line">                result = append(result, roman[i - 1])</div><div class="line">                for j := 6; j &lt;= x; j++ &#123;</div><div class="line">                    result = append(result, roman[i])</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            case x == 4: &#123;</div><div class="line">                result = append(result, roman[i])</div><div class="line">                result = append(result, roman[i - 1])</div><div class="line">            &#125;</div><div class="line">            default: &#123;</div><div class="line">                for j := 1; j &lt;= x; j++ &#123;</div><div class="line">                    result = append(result, roman[i])</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        num %= value[i]</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return string(result)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>数字转换成罗马文，首先要知道罗马文表示方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">I    V    X    L    C    D    M</div><div class="line">1    5    10   50   100  500  1000</div></pre></td></tr></table></figure></p>
+<p>因为已规定输入的范围：1~3999 ，所以这里没有验证输入的合法性。<br>同时根据已知范围，可以列出所有情况，时间复杂度为：O（1）<br>参考：<a href="http://www.cnblogs.com/grandyang/p/4123374.html" target="_blank" rel="external">Grandyang的Blog</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">func intToRoman(num int) string &#123;</div><div class="line">    var M = [4]string&#123;&quot;&quot;, &quot;M&quot;, &quot;MM&quot;, &quot;MMM&quot;&#125;</div><div class="line">    var	C = [10]string&#123;&quot;&quot;, &quot;C&quot;, &quot;CC&quot;, &quot;CCC&quot;, &quot;CD&quot;, &quot;D&quot;, &quot;DC&quot;, &quot;DCC&quot;, &quot;DCCC&quot;, &quot;CM&quot;&#125;</div><div class="line">    var	X = [10]string&#123;&quot;&quot;, &quot;X&quot;, &quot;XX&quot;, &quot;XXX&quot;, &quot;XL&quot;, &quot;L&quot;, &quot;LX&quot;, &quot;LXX&quot;, &quot;LXXX&quot;, &quot;XC&quot;&#125;</div><div class="line">    var	I = [10]string&#123;&quot;&quot;, &quot;I&quot;, &quot;II&quot;, &quot;III&quot;, &quot;IV&quot;, &quot;V&quot;, &quot;VI&quot;, &quot;VII&quot;, &quot;VIII&quot;, &quot;IX&quot;&#125;</div><div class="line">    return M[num / 1000] + C[(num % 1000) / 100] + X[(num % 100) / 10] + I[num % 10]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/28/LeetCode-11-Container-With-Most-Water/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1403,129 +1526,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/LeetCode-3-Longest-Substring-Without-Repeating-Characters/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="su-42">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Code">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/17/LeetCode-3-Longest-Substring-Without-Repeating-Characters/" itemprop="url">LeetCode-3.Longest Substring Without Repeating Characters</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T11:13:59+08:00">
-                2017-08-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">package leetcode</div><div class="line"></div><div class="line">//Given a string, find the length of the longest substring without repeating characters.</div><div class="line">//</div><div class="line">//Examples:</div><div class="line">//Given &quot;abcabcbb&quot;, the answer is &quot;abc&quot;, which the length is 3.</div><div class="line">//Given &quot;bbbbb&quot;, the answer is &quot;b&quot;, with the length of 1.</div><div class="line">//Given &quot;pwwkew&quot;, the answer is &quot;wke&quot;, with the length of 3. Note that the answer must be a substring, &quot;pwke&quot; is a subsequence and not a substring.</div><div class="line"></div><div class="line">func LengthOfLongestSubstring(s string) int &#123;</div><div class="line">    max := 0</div><div class="line">    head := 0</div><div class="line">    </div><div class="line">    for index, value := range s &#123;</div><div class="line">        subString := s[head: index]</div><div class="line">        if strings.Contains(subString, string(value)) &#123;</div><div class="line">            head = strings.Index(subString, string(value)) + head + 1</div><div class="line">        &#125; else &#123;</div><div class="line">            if length := len(subString) + 1; length &gt; max &#123;</div><div class="line">                max = length</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return max</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>第一次提交未通过：<br>输入： <code>&quot;bbtablud&quot;</code><br>正确结果： 6<br>错误输出： 7</p>
-<p>回顾了下逻辑，问题出现在对子串起始地址的判断。之前错误代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">head = strings.Index(s, string(value)) + 1</div></pre></td></tr></table></figure></p>
-<p>之前对子串起始位置选择是通过原始string <strong>s</strong> 来判断的，这样就会出现一个问题：当value在subString之前出现多次时，head只是value第一次出现的位置。<br>的确是考虑不周。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1576,7 +1576,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
