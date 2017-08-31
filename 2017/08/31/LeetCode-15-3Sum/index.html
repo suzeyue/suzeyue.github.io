@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="1234567891011121314151617181920212223242526package leetcode//Given a string, find the length of the longest substring without repeating characters.////Examples://Given &amp;quot;abcabcbb&amp;quot;, the answer">
+<meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445package leetcodeimport &amp;quot;sort&amp;quot;//Given an array S of n integers, are there elements a, b, c in S such that a +">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode-3.Longest Substring Without Repeating Characters">
-<meta property="og:url" content="http://yoursite.com/2017/08/17/LeetCode-3-Longest-Substring-Without-Repeating-Characters/index.html">
+<meta property="og:title" content="LeetCode-15.3Sum">
+<meta property="og:url" content="http://yoursite.com/2017/08/31/LeetCode-15-3Sum/index.html">
 <meta property="og:site_name" content="Code">
-<meta property="og:description" content="1234567891011121314151617181920212223242526package leetcode//Given a string, find the length of the longest substring without repeating characters.////Examples://Given &amp;quot;abcabcbb&amp;quot;, the answer">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445package leetcodeimport &amp;quot;sort&amp;quot;//Given an array S of n integers, are there elements a, b, c in S such that a +">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-29T05:28:48.834Z">
+<meta property="og:updated_time" content="2017-08-31T06:24:09.572Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode-3.Longest Substring Without Repeating Characters">
-<meta name="twitter:description" content="1234567891011121314151617181920212223242526package leetcode//Given a string, find the length of the longest substring without repeating characters.////Examples://Given &amp;quot;abcabcbb&amp;quot;, the answer">
+<meta name="twitter:title" content="LeetCode-15.3Sum">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445package leetcodeimport &amp;quot;sort&amp;quot;//Given an array S of n integers, are there elements a, b, c in S such that a +">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/17/LeetCode-3-Longest-Substring-Without-Repeating-Characters/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/31/LeetCode-15-3Sum/"/>
 
 
 
 
 
-  <title>LeetCode-3.Longest Substring Without Repeating Characters | Code</title>
+  <title>LeetCode-15.3Sum | Code</title>
   
 
 
@@ -267,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/LeetCode-3-Longest-Substring-Without-Repeating-Characters/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/31/LeetCode-15-3Sum/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="su-42">
@@ -284,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode-3.Longest Substring Without Repeating Characters</h1>
+          <h1 class="post-title" itemprop="name headline">LeetCode-15.3Sum</h1>
         
 
         <div class="post-meta">
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T11:13:59+08:00">
-                2017-08-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-31T14:15:46+08:00">
+                2017-08-31
               </time>
             
 
@@ -334,10 +334,12 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">package leetcode</div><div class="line"></div><div class="line">//Given a string, find the length of the longest substring without repeating characters.</div><div class="line">//</div><div class="line">//Examples:</div><div class="line">//Given &quot;abcabcbb&quot;, the answer is &quot;abc&quot;, which the length is 3.</div><div class="line">//Given &quot;bbbbb&quot;, the answer is &quot;b&quot;, with the length of 1.</div><div class="line">//Given &quot;pwwkew&quot;, the answer is &quot;wke&quot;, with the length of 3. Note that the answer must be a substring, &quot;pwke&quot; is a subsequence and not a substring.</div><div class="line"></div><div class="line">func LengthOfLongestSubstring(s string) int &#123;</div><div class="line">    max := 0</div><div class="line">    head := 0</div><div class="line">    </div><div class="line">    for index, value := range s &#123;</div><div class="line">        subString := s[head: index]</div><div class="line">        if strings.Contains(subString, string(value)) &#123;</div><div class="line">            head = strings.Index(subString, string(value)) + head + 1</div><div class="line">        &#125; else &#123;</div><div class="line">            if length := len(subString) + 1; length &gt; max &#123;</div><div class="line">                max = length</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return max</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>第一次提交未通过：<br>输入： <code>&quot;bbtablud&quot;</code><br>正确结果： 6<br>错误输出： 7</p>
-<p>回顾了下逻辑，问题出现在对子串起始地址的判断。之前错误代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">head = strings.Index(s, string(value)) + 1</div></pre></td></tr></table></figure></p>
-<p>之前对子串起始位置选择是通过原始string <strong>s</strong> 来判断的，这样就会出现一个问题：当value在subString之前出现多次时，head只是value第一次出现的位置。<br>的确是考虑不周。</p>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">package leetcode</div><div class="line"></div><div class="line">import &quot;sort&quot;</div><div class="line"></div><div class="line">//Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0?</div><div class="line">//Find all unique triplets in the array which gives the sum of zero.</div><div class="line"></div><div class="line">func ThreeSum(nums []int) [][]int &#123;</div><div class="line">	var result [][]int</div><div class="line">	if len(nums) == 0 &#123;</div><div class="line">		return result</div><div class="line">	&#125;</div><div class="line">	sort.Ints(nums)</div><div class="line">	if nums[0] &gt; 0 &#123;</div><div class="line">		return result</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	for i := 0; i &lt; len(nums); i++ &#123;</div><div class="line">		if i &gt; 0 &amp;&amp; nums[i] == nums[i-1] &#123;</div><div class="line">			continue</div><div class="line">		&#125;</div><div class="line">		target := 0 - nums[i]</div><div class="line">		m, n := i+1, len(nums)-1</div><div class="line">		for ; m &lt; n; &#123;</div><div class="line">			if nums[m]+nums[n] == target &#123;</div><div class="line">				solution := []int&#123;nums[i], nums[m], nums[n]&#125;</div><div class="line">				result = append(result, solution)</div><div class="line">				for ; m &lt; n &amp;&amp; nums[m] == nums[m+1]; &#123;</div><div class="line">					m++</div><div class="line">				&#125;</div><div class="line">				for ; m &lt; n &amp;&amp; nums[n] == nums[n-1]; &#123;</div><div class="line">					n--</div><div class="line">				&#125;</div><div class="line">				m++</div><div class="line">				n--</div><div class="line">			&#125; else if nums[m]+nums[n] &lt; target &#123;</div><div class="line">				m++</div><div class="line">			&#125; else &#123;</div><div class="line">				n--</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	return result</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>3sum可以转化成之前的2sum问题：取第i个数，对大于i的数组进行2sum，target为 <strong>0-第i个数</strong> 。<br>注意：</p>
+<ol>
+<li>需要对数组排序</li>
+<li>去重</li>
+</ol>
 
       
     </div>
@@ -368,8 +370,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/16/LeetCode-2-Add-Two-Numbers/" rel="next" title="LeetCode-2.Add Two Numbers">
-                <i class="fa fa-chevron-left"></i> LeetCode-2.Add Two Numbers
+              <a href="/2017/08/30/LeetCode-14-Longest-Common-Prefix/" rel="next" title="LeetCode-14.Longest Common Prefix">
+                <i class="fa fa-chevron-left"></i> LeetCode-14.Longest Common Prefix
               </a>
             
           </div>
@@ -377,10 +379,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/18/LeetCode-4-Median-of-Two-Sorted-Arrays/" rel="prev" title="LeetCode-4.Median of Two Sorted Arrays">
-                LeetCode-4.Median of Two Sorted Arrays <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
