@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="12345678910111213141516171819202122232425package leetcode//Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the">
+<meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859package leetcodeimport &amp;quot;sort&amp;quot;//Given an array S of n integers, are there elements">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode-11.Container With Most Water">
-<meta property="og:url" content="http://yoursite.com/2017/08/28/LeetCode-11-Container-With-Most-Water/index.html">
+<meta property="og:title" content="LeetCode-18.4Sum">
+<meta property="og:url" content="http://yoursite.com/2017/09/06/LeetCode-18-4Sum/index.html">
 <meta property="og:site_name" content="Code">
-<meta property="og:description" content="12345678910111213141516171819202122232425package leetcode//Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859package leetcodeimport &amp;quot;sort&amp;quot;//Given an array S of n integers, are there elements">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-29T05:30:19.955Z">
+<meta property="og:updated_time" content="2017-09-06T03:41:15.954Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode-11.Container With Most Water">
-<meta name="twitter:description" content="12345678910111213141516171819202122232425package leetcode//Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the">
+<meta name="twitter:title" content="LeetCode-18.4Sum">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859package leetcodeimport &amp;quot;sort&amp;quot;//Given an array S of n integers, are there elements">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/28/LeetCode-11-Container-With-Most-Water/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/06/LeetCode-18-4Sum/"/>
 
 
 
 
 
-  <title>LeetCode-11.Container With Most Water | Code</title>
+  <title>LeetCode-18.4Sum | Code</title>
   
 
 
@@ -267,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/28/LeetCode-11-Container-With-Most-Water/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/06/LeetCode-18-4Sum/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="su-42">
@@ -284,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode-11.Container With Most Water</h1>
+          <h1 class="post-title" itemprop="name headline">LeetCode-18.4Sum</h1>
         
 
         <div class="post-meta">
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-28T17:29:47+08:00">
-                2017-08-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-06T11:37:39+08:00">
+                2017-09-06
               </time>
             
 
@@ -334,7 +334,8 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">package leetcode</div><div class="line"></div><div class="line">//Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0).</div><div class="line">//Find two lines, which together with x-axis forms a container, such that the container contains the most water.</div><div class="line">//</div><div class="line">//Note: You may not slant the container and n is at least 2.</div><div class="line"></div><div class="line">import &quot;math&quot;</div><div class="line"></div><div class="line">func MaxArea(height []int) int &#123;</div><div class="line">    left, right := 0, len(height) - 1</div><div class="line">    maxArea := 0</div><div class="line">    </div><div class="line">    for ; left &lt; right; &#123;</div><div class="line">        area := (right - left) * int(math.Min(float64(height[left]), float64(height[right])))</div><div class="line">        maxArea = int(math.Max(float64(maxArea), float64(area)))</div><div class="line">        if height[left] &lt; height[right] &#123;</div><div class="line">            left++</div><div class="line">        &#125; else &#123;</div><div class="line">            right--</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return maxArea</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line">package leetcode</div><div class="line"></div><div class="line">import &quot;sort&quot;</div><div class="line"></div><div class="line">//Given an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.</div><div class="line">//Note: The solution set must not contain duplicate quadruplets.</div><div class="line">//</div><div class="line">//For example, given array S = [1, 0, -1, 0, -2, 2], and target = 0.</div><div class="line">//A solution set is:</div><div class="line">//[</div><div class="line">//  [-1,  0, 0, 1],</div><div class="line">//  [-2, -1, 1, 2],</div><div class="line">//  [-2,  0, 0, 2]</div><div class="line">//]</div><div class="line"></div><div class="line">func FourSum(nums []int, target int) [][]int &#123;</div><div class="line">    var res [][]int</div><div class="line">    length := len(nums)</div><div class="line">    if length &lt; 4 &#123;</div><div class="line">        return res</div><div class="line">    &#125;</div><div class="line">    sort.Ints(nums)</div><div class="line">    </div><div class="line">    for i := 0; i &lt; length - 3; i++ &#123;</div><div class="line">        if i &gt; 0 &amp;&amp; nums[i] == nums[i - 1] &#123;</div><div class="line">            continue</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        for j := i + 1; j &lt; length - 2; j++ &#123;</div><div class="line">            if j &gt; i + 1 &amp;&amp; nums[j] == nums[j - 1] &#123;</div><div class="line">                continue</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">            left, right := j + 1, length - 1</div><div class="line">            for ; left &lt; right; &#123;</div><div class="line">                sum := nums[left] + nums[right] + nums[i] + nums[j]</div><div class="line">                if sum == target &#123;</div><div class="line">                    solution := []int&#123;nums[i], nums[j], nums[left], nums[right]&#125;</div><div class="line">                    res = append(res, solution)</div><div class="line">                    for ; left &lt; right &amp;&amp; nums[left] == nums[left + 1]; &#123;</div><div class="line">                        left++</div><div class="line">                    &#125;</div><div class="line">                    for ; left &lt; right &amp;&amp; nums[right] == nums[right - 1]; &#123;</div><div class="line">                        right--</div><div class="line">                    &#125;</div><div class="line">                    left++</div><div class="line">                    right--</div><div class="line">                &#125; else if sum &lt; target &#123;</div><div class="line">                    left++</div><div class="line">                &#125; else &#123;</div><div class="line">                    right--</div><div class="line">                &#125;    </div><div class="line"></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return res</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>4sum类似3sum，还是最终转换成2sum。</p>
 
       
     </div>
@@ -365,8 +366,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/27/LeetCode-10-Regular-Expression-Matching/" rel="next" title="LeetCode-10.Regular Expression Matching">
-                <i class="fa fa-chevron-left"></i> LeetCode-10.Regular Expression Matching
+              <a href="/2017/09/05/LeetCode-17-Letter-Combinations-of-a-Phone-Number/" rel="next" title="LeetCode-17.Letter Combinations of a Phone Number">
+                <i class="fa fa-chevron-left"></i> LeetCode-17.Letter Combinations of a Phone Number
               </a>
             
           </div>
@@ -374,10 +375,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/29/LeetCode-12-Integer-to-Roman/" rel="prev" title="LeetCode-12.Integer to Roman">
-                LeetCode-12.Integer to Roman <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
