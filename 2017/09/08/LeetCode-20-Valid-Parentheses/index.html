@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738package leetcode//Given a linked list, remove the nth node from the end of list and return its head.////For example,////   Given link">
+<meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748package leetcode//Given a string containing just the characters &amp;apos;(&amp;apos;, &amp;apos;)&amp;apos;, &amp;apos;&amp;#123;&amp;apos;,">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode-19.Remove Nth Node From End of List">
-<meta property="og:url" content="http://yoursite.com/2017/09/07/LeetCode-19-Remove-Nth-Node-From-End-of-List/index.html">
+<meta property="og:title" content="LeetCode-20.Valid Parentheses">
+<meta property="og:url" content="http://yoursite.com/2017/09/08/LeetCode-20-Valid-Parentheses/index.html">
 <meta property="og:site_name" content="Code">
-<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738package leetcode//Given a linked list, remove the nth node from the end of list and return its head.////For example,////   Given link">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748package leetcode//Given a string containing just the characters &amp;apos;(&amp;apos;, &amp;apos;)&amp;apos;, &amp;apos;&amp;#123;&amp;apos;,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-07T03:37:29.486Z">
+<meta property="og:updated_time" content="2017-09-08T02:17:03.352Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode-19.Remove Nth Node From End of List">
-<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738package leetcode//Given a linked list, remove the nth node from the end of list and return its head.////For example,////   Given link">
+<meta name="twitter:title" content="LeetCode-20.Valid Parentheses">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748package leetcode//Given a string containing just the characters &amp;apos;(&amp;apos;, &amp;apos;)&amp;apos;, &amp;apos;&amp;#123;&amp;apos;,">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/07/LeetCode-19-Remove-Nth-Node-From-End-of-List/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/08/LeetCode-20-Valid-Parentheses/"/>
 
 
 
 
 
-  <title>LeetCode-19.Remove Nth Node From End of List | Code</title>
+  <title>LeetCode-20.Valid Parentheses | Code</title>
   
 
 
@@ -267,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/07/LeetCode-19-Remove-Nth-Node-From-End-of-List/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/08/LeetCode-20-Valid-Parentheses/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="su-42">
@@ -284,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode-19.Remove Nth Node From End of List</h1>
+          <h1 class="post-title" itemprop="name headline">LeetCode-20.Valid Parentheses</h1>
         
 
         <div class="post-meta">
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-07T11:31:49+08:00">
-                2017-09-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-08T10:14:53+08:00">
+                2017-09-08
               </time>
             
 
@@ -334,8 +334,8 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">package leetcode</div><div class="line"></div><div class="line">//Given a linked list, remove the nth node from the end of list and return its head.</div><div class="line">//</div><div class="line">//For example,</div><div class="line">//</div><div class="line">//   Given linked list: 1-&gt;2-&gt;3-&gt;4-&gt;5, and n = 2.</div><div class="line">//</div><div class="line">//   After removing the second node from the end, the linked list becomes 1-&gt;2-&gt;3-&gt;5.</div><div class="line">//Note:</div><div class="line">//Given n will always be valid.</div><div class="line">//Try to do this in one pass.</div><div class="line"></div><div class="line"></div><div class="line">type ListNode struct &#123;</div><div class="line">    Val int</div><div class="line">    Next *ListNode</div><div class="line">&#125;</div><div class="line"></div><div class="line">func RemoveNthFromEnd(head *ListNode, n int) *ListNode &#123;</div><div class="line">    current := head</div><div class="line">    tail := head</div><div class="line">    </div><div class="line">    for i := 0; i &lt; n &amp;&amp; tail != nil; i++ &#123;</div><div class="line">        tail = tail.Next</div><div class="line">    &#125;</div><div class="line">    if tail == nil &#123;</div><div class="line">        head = head.Next</div><div class="line">        return head</div><div class="line">    &#125;       </div><div class="line">    for ; tail.Next != nil; &#123;</div><div class="line">        tail = tail.Next</div><div class="line">        current = current.Next</div><div class="line">    &#125;</div><div class="line">    current.Next = current.Next.Next</div><div class="line">    </div><div class="line">    return head</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>通过双指针，间隔 <strong>n</strong> ，当后指针到链表尾时，前一个指针就是待删除的节点。<br>为删除这个节点，我们需要定位这个节点的前驱。<br>注意删除头节点的情况。</p>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">package leetcode</div><div class="line"></div><div class="line">//Given a string containing just the characters &apos;(&apos;, &apos;)&apos;, &apos;&#123;&apos;, &apos;&#125;&apos;, &apos;[&apos; and &apos;]&apos;, determine if the input string is valid.</div><div class="line">//</div><div class="line">//The brackets must close in the correct order, &quot;()&quot; and &quot;()[]&#123;&#125;&quot; are all valid but &quot;(]&quot; and &quot;([)]&quot; are not.</div><div class="line"></div><div class="line">func IsValid(s string) bool &#123;</div><div class="line">    var stack []string</div><div class="line">    </div><div class="line">    for i := 0; i &lt; len(s); i++ &#123;</div><div class="line">        tmp := string(s[i])</div><div class="line">        length := len(stack)</div><div class="line">        switch tmp &#123;</div><div class="line">            case &quot;(&quot; : &#123;</div><div class="line">                stack = append(stack, tmp)</div><div class="line">            &#125;            </div><div class="line">            case &quot;&#123;&quot; : &#123;</div><div class="line">                stack = append(stack, tmp)</div><div class="line">            &#125;            </div><div class="line">            case &quot;[&quot; : &#123;</div><div class="line">                stack = append(stack, tmp)</div><div class="line">            &#125;</div><div class="line">            case &quot;)&quot; : &#123;</div><div class="line">                if length &gt;0 &amp;&amp; stack[length - 1] == &quot;(&quot; &#123;</div><div class="line">                    stack = stack[:length - 1]</div><div class="line">                &#125; else &#123;</div><div class="line">                    return false</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            case &quot;&#125;&quot; : &#123;</div><div class="line">                if length &gt;0 &amp;&amp; stack[length - 1] == &quot;&#123;&quot; &#123;</div><div class="line">                    stack = stack[:length - 1]</div><div class="line">                &#125; else &#123;</div><div class="line">                    return false</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            case &quot;]&quot; : &#123;</div><div class="line">                if length &gt;0 &amp;&amp; stack[length - 1] == &quot;[&quot; &#123;</div><div class="line">                    stack = stack[:length - 1]</div><div class="line">                &#125; else &#123;</div><div class="line">                    return false</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return len(stack) == 0</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>stack</strong></p>
 
       
     </div>
@@ -366,8 +366,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/06/LeetCode-18-4Sum/" rel="next" title="LeetCode-18.4Sum">
-                <i class="fa fa-chevron-left"></i> LeetCode-18.4Sum
+              <a href="/2017/09/07/LeetCode-19-Remove-Nth-Node-From-End-of-List/" rel="next" title="LeetCode-19.Remove Nth Node From End of List">
+                <i class="fa fa-chevron-left"></i> LeetCode-19.Remove Nth Node From End of List
               </a>
             
           </div>
@@ -375,10 +375,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/08/LeetCode-20-Valid-Parentheses/" rel="prev" title="LeetCode-20.Valid Parentheses">
-                LeetCode-20.Valid Parentheses <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
