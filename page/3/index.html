@@ -264,6 +264,131 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/16/LeetCode-2-Add-Two-Numbers/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="su-42">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Code">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/16/LeetCode-2-Add-Two-Numbers/" itemprop="url">LeetCode-2.Add Two Numbers</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-16T10:20:43+08:00">
+                2017-08-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">package leetcode</div><div class="line"></div><div class="line"></div><div class="line">//You are given two non-empty linked lists representing two non-negative integers.</div><div class="line">//The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</div><div class="line">//You may assume the two numbers do not contain any leading zero, except the number 0 itself.</div><div class="line"></div><div class="line">//Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)</div><div class="line">//Output: 7 -&gt; 0 -&gt; 8</div><div class="line"></div><div class="line"></div><div class="line">type ListNode struct &#123;</div><div class="line">    Val int</div><div class="line">    Next *ListNode</div><div class="line">&#125;</div><div class="line"></div><div class="line">func AddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode &#123;</div><div class="line">    result := new(ListNode)</div><div class="line">    p := result</div><div class="line">    decade := 0</div><div class="line">    </div><div class="line">    for l1 != nil &amp;&amp; l2!= nil &#123;</div><div class="line">        sum := decade + l1.Val + l2.Val</div><div class="line">        p.Next = &amp;ListNode&#123;Val: sum%10&#125;</div><div class="line">        decade = sum / 10</div><div class="line">        p = p.Next</div><div class="line">        l1 = l1.Next</div><div class="line">        l2 = l2.Next</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    for l1 != nil &#123;</div><div class="line">        sum := decade + l1.Val</div><div class="line">        p.Next = &amp;ListNode&#123;Val: sum%10&#125;</div><div class="line">        decade = sum / 10</div><div class="line">        p = p.Next</div><div class="line">        l1 = l1.Next</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    for l2 != nil &#123;</div><div class="line">        sum := decade + l2.Val</div><div class="line">        p.Next = &amp;ListNode&#123;Val: sum%10&#125;</div><div class="line">        decade = sum / 10</div><div class="line">        p = p.Next</div><div class="line">        l2 = l2.Next</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    if decade &gt; 0 &#123;</div><div class="line">        p.Next = &amp;ListNode&#123;Val: decade&#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return result.Next</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>进位</li>
+<li>当两个链表长度不一致</li>
+<li>当处理完最后一个节点，但仍需进一位</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/15/LeetCode-1-Two-Sum/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -583,7 +708,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
