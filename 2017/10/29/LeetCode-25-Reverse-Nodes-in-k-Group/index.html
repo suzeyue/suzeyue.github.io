@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="12345678910111213141516171819202122232425262728package leetcodeimport &amp;quot;math&amp;quot;//Write a function to find the longest common prefix string amongst an array of strings.func longestCommonPrefix(s">
+<meta name="description" content="DescriptionGiven a linked list, reverse the nodes of a linked list k at a time and return its modified list.k is a positive integer and is less than or equal to the length of the linked list. If the n">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode-14.Longest Common Prefix">
-<meta property="og:url" content="http://yoursite.com/2017/08/30/LeetCode-14-Longest-Common-Prefix/index.html">
+<meta property="og:title" content="LeetCode-25.Reverse Nodes in k-Group">
+<meta property="og:url" content="http://yoursite.com/2017/10/29/LeetCode-25-Reverse-Nodes-in-k-Group/index.html">
 <meta property="og:site_name" content="Talk is cheap.">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728package leetcodeimport &amp;quot;math&amp;quot;//Write a function to find the longest common prefix string amongst an array of strings.func longestCommonPrefix(s">
+<meta property="og:description" content="DescriptionGiven a linked list, reverse the nodes of a linked list k at a time and return its modified list.k is a positive integer and is less than or equal to the length of the linked list. If the n">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-30T12:04:58.970Z">
+<meta property="og:updated_time" content="2017-10-29T09:22:14.810Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode-14.Longest Common Prefix">
-<meta name="twitter:description" content="12345678910111213141516171819202122232425262728package leetcodeimport &amp;quot;math&amp;quot;//Write a function to find the longest common prefix string amongst an array of strings.func longestCommonPrefix(s">
+<meta name="twitter:title" content="LeetCode-25.Reverse Nodes in k-Group">
+<meta name="twitter:description" content="DescriptionGiven a linked list, reverse the nodes of a linked list k at a time and return its modified list.k is a positive integer and is less than or equal to the length of the linked list. If the n">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/30/LeetCode-14-Longest-Common-Prefix/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/29/LeetCode-25-Reverse-Nodes-in-k-Group/"/>
 
 
 
 
 
-  <title>LeetCode-14.Longest Common Prefix | Talk is cheap.</title>
+  <title>LeetCode-25.Reverse Nodes in k-Group | Talk is cheap.</title>
   
 
 
@@ -267,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/30/LeetCode-14-Longest-Common-Prefix/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/29/LeetCode-25-Reverse-Nodes-in-k-Group/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Su">
@@ -284,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode-14.Longest Common Prefix</h1>
+          <h1 class="post-title" itemprop="name headline">LeetCode-25.Reverse Nodes in k-Group</h1>
         
 
         <div class="post-meta">
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-30T20:03:36+08:00">
-                2017-08-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-29T17:10:25+08:00">
+                2017-10-29
               </time>
             
 
@@ -334,7 +334,17 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">package leetcode</div><div class="line"></div><div class="line">import &quot;math&quot;</div><div class="line"></div><div class="line">//Write a function to find the longest common prefix string amongst an array of strings.</div><div class="line"></div><div class="line">func longestCommonPrefix(strs []string) string &#123;</div><div class="line">    if len(strs) == 0 &#123;</div><div class="line">        return &quot;&quot;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    minLen := len(strs[0])</div><div class="line">    for i := 1; i &lt; len(strs); i++ &#123;</div><div class="line">        current := len(strs[i])</div><div class="line">        minLen = int(math.Min(float64(minLen), float64(current)))</div><div class="line">        j := 0</div><div class="line">        for ; j &lt; minLen; j++ &#123;         </div><div class="line">            if strs[0][j] != strs[i][j] &#123;    </div><div class="line">                break</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        if minLen &gt; j &#123;</div><div class="line">            minLen = j</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return string(strs[0][:minLen])</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p><strong>Given a linked list, reverse the nodes of a linked list k at a time and return its modified list.</strong><br><strong>k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes in the end should remain as it is.</strong><br><strong>You may not alter the values in the nodes, only nodes itself may be changed.</strong><br><strong>Only constant memory is allowed.</strong><br><strong>For example,*
+</strong>Given this linked list: <code>1-&gt;2-&gt;3-&gt;4-&gt;5</code> <strong>
+</strong>For k = 2, you should return: <code>2-&gt;1-&gt;4-&gt;3-&gt;5</code> <strong>
+</strong>For k = 3, you should return: <code>3-&gt;2-&gt;1-&gt;4-&gt;5</code> **</p>
+<p>同样是翻转链表，不过这次是以k个为一组。<br>所以这里需要考虑两个问题：</p>
+<ol>
+<li>k个节点的链表如何翻转</li>
+<li>如何将输入链表按k个划分， 同时考虑到最后一组可能不满k个导致无需翻转</li>
+</ol>
+<p>在 <a href="http://www.cnblogs.com/grandyang/p/4441324.html" target="_blank" rel="external">Grandyang</a> 的博客里看到了一个非常有意思的划分：通过链表的长度 length 和 k 进行比较，翻转，直至 length &lt; k 结束。<br>Golang实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Definition for singly-linked list.</div><div class="line"> * type ListNode struct &#123;</div><div class="line"> *     Val int</div><div class="line"> *     Next *ListNode</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line">func reverseKGroup(head *ListNode, k int) *ListNode &#123;</div><div class="line">    if head == nil || k == 1 &#123;</div><div class="line">        return head</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    length := 0</div><div class="line">    var mark = new(ListNode)</div><div class="line">    mark.Next = head</div><div class="line">    before := mark</div><div class="line">    cur := before.Next</div><div class="line">    for ; cur != nil; &#123;</div><div class="line">        cur = cur.Next</div><div class="line">        length++</div><div class="line">    &#125;</div><div class="line">    for ; length &gt;= k; &#123;</div><div class="line">        cur = before.Next</div><div class="line">        for i := 1; i &lt; k; i++ &#123;</div><div class="line">            tmp := cur.Next</div><div class="line">            cur.Next = tmp.Next</div><div class="line">            tmp.Next = before.Next</div><div class="line">            before.Next = tmp</div><div class="line">            </div><div class="line">        &#125;</div><div class="line">        before = cur</div><div class="line">        length -= k</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">   </div><div class="line">    return mark.Next</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -365,8 +375,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/30/LeetCode-13-Roman-to-Integer/" rel="next" title="LeetCode-13.Roman to Integer">
-                <i class="fa fa-chevron-left"></i> LeetCode-13.Roman to Integer
+              <a href="/2017/10/27/LeetCode-24-Swap-Nodes-in-Pairs/" rel="next" title="LeetCode-24.Swap Nodes in Pairs">
+                <i class="fa fa-chevron-left"></i> LeetCode-24.Swap Nodes in Pairs
               </a>
             
           </div>
@@ -374,10 +384,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/31/LeetCode-15-3Sum/" rel="prev" title="LeetCode-15.3Sum">
-                LeetCode-15.3Sum <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -429,8 +435,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -483,6 +498,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
