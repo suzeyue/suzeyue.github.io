@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="1234567891011121314151617181920212223242526package leetcodeimport &amp;quot;strconv&amp;quot;//Given a digit string, return all possible letter combinations that the number could represent.func LetterCombinat">
+<meta name="description" content="DescriptionGiven an array and a value, remove all instances of that value in place and return the new length.Do not allocate extra space for another array, you must do this in place with constant memo">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode-17.Letter Combinations of a Phone Number">
-<meta property="og:url" content="http://yoursite.com/2017/09/05/LeetCode-17-Letter-Combinations-of-a-Phone-Number/index.html">
+<meta property="og:title" content="LeetCode-27.Remove Element">
+<meta property="og:url" content="http://yoursite.com/2017/10/30/LeetCode-27-Remove-Element/index.html">
 <meta property="og:site_name" content="Talk is cheap.">
-<meta property="og:description" content="1234567891011121314151617181920212223242526package leetcodeimport &amp;quot;strconv&amp;quot;//Given a digit string, return all possible letter combinations that the number could represent.func LetterCombinat">
+<meta property="og:description" content="DescriptionGiven an array and a value, remove all instances of that value in place and return the new length.Do not allocate extra space for another array, you must do this in place with constant memo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-05T03:37:38.424Z">
+<meta property="og:updated_time" content="2017-10-30T02:48:38.122Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode-17.Letter Combinations of a Phone Number">
-<meta name="twitter:description" content="1234567891011121314151617181920212223242526package leetcodeimport &amp;quot;strconv&amp;quot;//Given a digit string, return all possible letter combinations that the number could represent.func LetterCombinat">
+<meta name="twitter:title" content="LeetCode-27.Remove Element">
+<meta name="twitter:description" content="DescriptionGiven an array and a value, remove all instances of that value in place and return the new length.Do not allocate extra space for another array, you must do this in place with constant memo">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/05/LeetCode-17-Letter-Combinations-of-a-Phone-Number/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/30/LeetCode-27-Remove-Element/"/>
 
 
 
 
 
-  <title>LeetCode-17.Letter Combinations of a Phone Number | Talk is cheap.</title>
+  <title>LeetCode-27.Remove Element | Talk is cheap.</title>
   
 
 
@@ -267,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/05/LeetCode-17-Letter-Combinations-of-a-Phone-Number/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/30/LeetCode-27-Remove-Element/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Su">
@@ -284,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode-17.Letter Combinations of a Phone Number</h1>
+          <h1 class="post-title" itemprop="name headline">LeetCode-27.Remove Element</h1>
         
 
         <div class="post-meta">
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-05T11:30:51+08:00">
-                2017-09-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-30T10:46:21+08:00">
+                2017-10-30
               </time>
             
 
@@ -334,8 +334,8 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">package leetcode</div><div class="line"></div><div class="line">import &quot;strconv&quot;</div><div class="line"></div><div class="line">//Given a digit string, return all possible letter combinations that the number could represent.</div><div class="line"></div><div class="line">func LetterCombinations(digits string) []string &#123;    </div><div class="line">    var res []string</div><div class="line">    if len(digits) == 0 &#123;</div><div class="line">        return res</div><div class="line">    &#125;</div><div class="line">    var mapping = []string&#123;&quot;0&quot;, &quot;1&quot;, &quot;abc&quot;, &quot;def&quot;, &quot;ghi&quot;, &quot;jkl&quot;, &quot;mno&quot;, &quot;pqrs&quot;, &quot;tuv&quot;, &quot;wxyz&quot;&#125;</div><div class="line">    res = append(res, &quot;&quot;)</div><div class="line">    for i := 0; i &lt; len(digits); i++ &#123;</div><div class="line">        x, _ := strconv.Atoi(string(digits[i]))</div><div class="line">        for ; len(res[0]) == i; &#123;</div><div class="line">            str := res[0]</div><div class="line">            res = res[1:]</div><div class="line">            for j := 0; j &lt; len(mapping[x]); j++ &#123;</div><div class="line">                res = append(res, str + string(mapping[x][j]))</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return res</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这道题是电话号码的字母组合。<br>参考Discuss中排名最高的 <strong>FIFO queue</strong> 解法。</p>
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>Given an array and a value, remove all instances of that value in place and return the new length.<br>Do not allocate extra space for another array, you must do this in place with constant memory.<br>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.<br>Example:<br>Given input array nums = <code>[3,2,2,3]</code> , val = <code>3</code><br>Your function should return length = 2, with the first two elements of nums being 2.</p>
+<h3 id="code"><a href="#code" class="headerlink" title="code"></a>code</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">func removeElement(nums []int, val int) int &#123;</div><div class="line">    length := len(nums)</div><div class="line">    if length &lt; 1 &#123;</div><div class="line">        return 0</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    result := 0</div><div class="line">    for i := 0; i &lt; length; i++ &#123;</div><div class="line">        if nums[i] != val &#123;</div><div class="line">            nums[result] = nums[i]</div><div class="line">            result++</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return result</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -366,8 +366,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/01/LeetCode-16-3Sum-Closest/" rel="next" title="LeetCode-16.3Sum Closest">
-                <i class="fa fa-chevron-left"></i> LeetCode-16.3Sum Closest
+              <a href="/2017/10/30/LeetCode-26-Remove-Duplicates-from-Sorted-Array/" rel="next" title="LeetCode-26.Remove Duplicates from Sorted Array">
+                <i class="fa fa-chevron-left"></i> LeetCode-26.Remove Duplicates from Sorted Array
               </a>
             
           </div>
@@ -375,10 +375,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/06/LeetCode-18-4Sum/" rel="prev" title="LeetCode-18.4Sum">
-                LeetCode-18.4Sum <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -430,8 +426,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -484,6 +489,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#code"><span class="nav-number">2.</span> <span class="nav-text">code</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
