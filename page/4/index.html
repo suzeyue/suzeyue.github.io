@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="docker,golang," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -94,18 +94,13 @@
 
 
 
-<meta name="description" content="mflag包实现了命令行中flag的解析。代码在docker/pkg/mflag/flag.go中。 用法 第一步：注册flag。flag的注册主要用到Bool（）、BoolVar（）、Int（）、IntVar（）、String（）、StringVar（）等方法。这些方法需要对应的数据类型（实现Value接口）：boolValue、intValue、stringValue。。。这些类型代码中以定义">
-<meta name="keywords" content="docker,golang">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Docker 1.12源码分析 -- mflag包">
-<meta property="og:url" content="http://yoursite.com/2017/08/10/Docker-1-12源码分析-mflag包/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Talk is cheap.">
+<meta property="og:url" content="http://yoursite.com/page/4/index.html">
 <meta property="og:site_name" content="Talk is cheap.">
-<meta property="og:description" content="mflag包实现了命令行中flag的解析。代码在docker/pkg/mflag/flag.go中。 用法 第一步：注册flag。flag的注册主要用到Bool（）、BoolVar（）、Int（）、IntVar（）、String（）、StringVar（）等方法。这些方法需要对应的数据类型（实现Value接口）：boolValue、intValue、stringValue。。。这些类型代码中以定义">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-24T11:59:41.441Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Docker 1.12源码分析 -- mflag包">
-<meta name="twitter:description" content="mflag包实现了命令行中flag的解析。代码在docker/pkg/mflag/flag.go中。 用法 第一步：注册flag。flag的注册主要用到Bool（）、BoolVar（）、Int（）、IntVar（）、String（）、StringVar（）等方法。这些方法需要对应的数据类型（实现Value接口）：boolValue、intValue、stringValue。。。这些类型代码中以定义">
+<meta name="twitter:title" content="Talk is cheap.">
 
 
 
@@ -134,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/10/Docker-1-12源码分析-mflag包/"/>
+  <link rel="canonical" href="http://yoursite.com/page/4/"/>
 
 
 
 
 
-  <title>Docker 1.12源码分析 -- mflag包 | Talk is cheap.</title>
+  <title>Talk is cheap.</title>
   
 
 
@@ -159,7 +154,9 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -252,9 +249,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -284,7 +281,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Docker 1.12源码分析 -- mflag包</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/10/Docker-1-12源码分析-mflag包/" itemprop="url">Docker 1.12源码分析 -- mflag包</a></h1>
         
 
         <div class="post-meta">
@@ -334,7 +333,9 @@
       
 
       
-        <p>mflag包实现了命令行中flag的解析。<br>代码在docker/pkg/mflag/flag.go中。</p>
+        
+          
+            <p>mflag包实现了命令行中flag的解析。<br>代码在docker/pkg/mflag/flag.go中。</p>
 <h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><ul>
 <li><p>第一步：注册flag。<br>flag的注册主要用到Bool（）、BoolVar（）、Int（）、IntVar（）、String（）、StringVar（）等方法。<br>这些方法需要对应的数据类型（实现Value接口）：boolValue、intValue、stringValue。。。这些类型代码中以定义好。<br>同样的我们可以自定义数据类型进行注册解析，此类型必须满足Value接口，然后调用<code>Var(value Value, names []string, usage string)</code>方法注册（第一个参数为Value）。</p>
 </li>
@@ -378,6 +379,8 @@
 <h3 id="主要的变量："><a href="#主要的变量：" class="headerlink" title="主要的变量："></a>主要的变量：</h3><h4 id="CommandLine："><a href="#CommandLine：" class="headerlink" title="CommandLine："></a>CommandLine：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// CommandLine是默认命令行flag集，用于解析os.Args。包水平的函数·如BoolVar等都是对其方法的封装。</div><div class="line">var CommandLine = NewFlagSet(os.Args[0], ExitOnError)  //FlagSet.name,  FlagSet.errorHanding</div><div class="line">这里主要看一下Parse(),可以看到它解析的是os.Args[1:]</div><div class="line">func Parse() &#123;</div><div class="line">   // Ignore errors; CommandLine is set for ExitOnError.</div><div class="line">   CommandLine.Parse(os.Args[1:])</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>代码中的其它部分这里就不做分析。</p>
 
+          
+        
       
     </div>
     
@@ -392,38 +395,14 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/docker/" rel="tag"># docker</a>
-          
-            <a href="/tags/golang/" rel="tag"># golang</a>
-          
-        </div>
+
+      
+
       
 
       
       
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/15/LeetCode-1-Two-Sum/" rel="prev" title="LeetCode-1.Two Sum">
-                LeetCode-1.Two Sum <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -433,11 +412,14 @@
   </article>
 
 
+    
+  </section>
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+  </nav>
+
 
 
           </div>
@@ -445,10 +427,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -469,17 +447,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -532,22 +501,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#用法"><span class="nav-number">1.</span> <span class="nav-text">用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主要的数据结构"><span class="nav-number">2.</span> <span class="nav-text">主要的数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Value："><span class="nav-number">2.1.</span> <span class="nav-text">Value：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Getter："><span class="nav-number">2.2.</span> <span class="nav-text">Getter：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Flag："><span class="nav-number">2.3.</span> <span class="nav-text">Flag：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FlagSet："><span class="nav-number">2.4.</span> <span class="nav-text">FlagSet：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主要的方法："><span class="nav-number">3.</span> <span class="nav-text">主要的方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主要的变量："><span class="nav-number">4.</span> <span class="nav-text">主要的变量：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CommandLine："><span class="nav-number">4.1.</span> <span class="nav-text">CommandLine：</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -674,10 +627,10 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-
+  
 
   
 

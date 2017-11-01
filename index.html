@@ -264,6 +264,128 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/01/LeetCode-29-Divide-Two-Integers/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Su">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Talk is cheap.">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/01/LeetCode-29-Divide-Two-Integers/" itemprop="url">LeetCode-29.Divide Two Integers</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-01T15:04:54+08:00">
+                2017-11-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>Divide two integers without using multiplication, division and mod operator.<br>If it is overflow, return MAX_INT.</p>
+<p>实现除法，但不允许使用乘、除、取余操作。第一反应就是使用位移。<br>主要就是循环把除数左移一位，如果小于被除数，那么结果就加上 <code>1</code> 左移几位的结果，然后被除数减去位移后的除数。</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">func divide(dividend int, divisor int) int &#123;</div><div class="line">    var m int64 = int64(abs(dividend))</div><div class="line">    var n int64 = int64(abs(divisor))</div><div class="line">    var res int64 = 0</div><div class="line">    for m &gt;= n &#123;</div><div class="line">        t := n</div><div class="line">        var p int64 = 1</div><div class="line">        for m &gt; (t &lt;&lt; 1) &#123;</div><div class="line">            t &lt;&lt;= 1</div><div class="line">            p &lt;&lt;= 1</div><div class="line">        &#125;</div><div class="line">        res += p</div><div class="line">        m -= t</div><div class="line">    &#125;</div><div class="line">    if dividend &lt; 0 &amp;&amp; divisor &gt; 0 || dividend &gt; 0 &amp;&amp; divisor &lt; 0 &#123;</div><div class="line">        res = -res</div><div class="line">    &#125;</div><div class="line">    if res &gt; math.MaxInt32 &#123;</div><div class="line">        return math.MaxInt32</div><div class="line">    &#125; else &#123;</div><div class="line">        return int(res)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">func abs(x int) int &#123;</div><div class="line">    if x &lt; 0 &#123;</div><div class="line">        return -x</div><div class="line">    &#125;</div><div class="line">    return x</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/30/LeetCode-28-Implement-strStr/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1348,132 +1470,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/07/LeetCode-19-Remove-Nth-Node-From-End-of-List/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Su">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Talk is cheap.">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/07/LeetCode-19-Remove-Nth-Node-From-End-of-List/" itemprop="url">LeetCode-19.Remove Nth Node From End of List</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-07T11:31:49+08:00">
-                2017-09-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">package leetcode</div><div class="line"></div><div class="line">//Given a linked list, remove the nth node from the end of list and return its head.</div><div class="line">//</div><div class="line">//For example,</div><div class="line">//</div><div class="line">//   Given linked list: 1-&gt;2-&gt;3-&gt;4-&gt;5, and n = 2.</div><div class="line">//</div><div class="line">//   After removing the second node from the end, the linked list becomes 1-&gt;2-&gt;3-&gt;5.</div><div class="line">//Note:</div><div class="line">//Given n will always be valid.</div><div class="line">//Try to do this in one pass.</div><div class="line"></div><div class="line"></div><div class="line">type ListNode struct &#123;</div><div class="line">    Val int</div><div class="line">    Next *ListNode</div><div class="line">&#125;</div><div class="line"></div><div class="line">func RemoveNthFromEnd(head *ListNode, n int) *ListNode &#123;</div><div class="line">    current := head</div><div class="line">    tail := head</div><div class="line">    </div><div class="line">    for i := 0; i &lt; n &amp;&amp; tail != nil; i++ &#123;</div><div class="line">        tail = tail.Next</div><div class="line">    &#125;</div><div class="line">    if tail == nil &#123;</div><div class="line">        head = head.Next</div><div class="line">        return head</div><div class="line">    &#125;       </div><div class="line">    for ; tail.Next != nil; &#123;</div><div class="line">        tail = tail.Next</div><div class="line">        current = current.Next</div><div class="line">    &#125;</div><div class="line">    current.Next = current.Next.Next</div><div class="line">    </div><div class="line">    return head</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>通过双指针，间隔 <strong>n</strong> ，当后指针到链表尾时，前一个指针就是待删除的节点。<br>为删除这个节点，我们需要定位这个节点的前驱。<br>注意删除头节点的情况。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1519,7 +1520,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

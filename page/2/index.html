@@ -264,6 +264,127 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/07/LeetCode-19-Remove-Nth-Node-From-End-of-List/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Su">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Talk is cheap.">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/07/LeetCode-19-Remove-Nth-Node-From-End-of-List/" itemprop="url">LeetCode-19.Remove Nth Node From End of List</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-07T11:31:49+08:00">
+                2017-09-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">package leetcode</div><div class="line"></div><div class="line">//Given a linked list, remove the nth node from the end of list and return its head.</div><div class="line">//</div><div class="line">//For example,</div><div class="line">//</div><div class="line">//   Given linked list: 1-&gt;2-&gt;3-&gt;4-&gt;5, and n = 2.</div><div class="line">//</div><div class="line">//   After removing the second node from the end, the linked list becomes 1-&gt;2-&gt;3-&gt;5.</div><div class="line">//Note:</div><div class="line">//Given n will always be valid.</div><div class="line">//Try to do this in one pass.</div><div class="line"></div><div class="line"></div><div class="line">type ListNode struct &#123;</div><div class="line">    Val int</div><div class="line">    Next *ListNode</div><div class="line">&#125;</div><div class="line"></div><div class="line">func RemoveNthFromEnd(head *ListNode, n int) *ListNode &#123;</div><div class="line">    current := head</div><div class="line">    tail := head</div><div class="line">    </div><div class="line">    for i := 0; i &lt; n &amp;&amp; tail != nil; i++ &#123;</div><div class="line">        tail = tail.Next</div><div class="line">    &#125;</div><div class="line">    if tail == nil &#123;</div><div class="line">        head = head.Next</div><div class="line">        return head</div><div class="line">    &#125;       </div><div class="line">    for ; tail.Next != nil; &#123;</div><div class="line">        tail = tail.Next</div><div class="line">        current = current.Next</div><div class="line">    &#125;</div><div class="line">    current.Next = current.Next.Next</div><div class="line">    </div><div class="line">    return head</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>通过双指针，间隔 <strong>n</strong> ，当后指针到链表尾时，前一个指针就是待删除的节点。<br>为删除这个节点，我们需要定位这个节点的前驱。<br>注意删除头节点的情况。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/06/LeetCode-18-4Sum/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1347,193 +1468,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/24/Docker-1-12源码分析-Docker-Client/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Su">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Talk is cheap.">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/24/Docker-1-12源码分析-Docker-Client/" itemprop="url">Docker 1.12源码分析 -- Docker Client</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-24T19:56:12+08:00">
-                2017-08-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在分析源码之前，我们先来思考几个问题：</p>
-<ol>
-<li>Docker Client到底是干嘛的？<br> Docker Client的任务就是接受用户的命令，并将之解析成Docker Server能够识别的形式，并发送至Docker Server。</li>
-<li>Docker Client怎么使用的？<br> 我们先来看下Docker Client 的用法： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Usage: docker [OPTIONS] COMMAND [arg...]</div><div class="line">       docker [ --help | -v | --version ]</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>这里用法分为两种：第一种是 <code>docker --help | docker -v | docker --version</code> 显示docker的帮助或版本信息；另一种则是解析用户的命令，并发送给Docker Server。<br>首先是我们运行的命令 <strong>docker</strong> （docker是根命令），然后是可选参数 <strong>[OPTIONS]</strong> （options也就是我们常说的flag参数），然后是子命令 <strong>command</strong> ，最后是命令请求的参数 <strong>arg</strong> 。</p>
-<ol>
-<li>了解了Docker Client的作用之后，那么，Docker Client是怎么创建的？</li>
-<li>flag、subcommand又是如何定义的？它们又是如何解析用户的命令？</li>
-<li>最后Docker Client又是如何将解析好的请求发送给Docker Server的呢？</li>
-</ol>
-<p>带着上面的问题我们来查看Docker Client的源码，Docker Client的入口是cmd/docker/docker.go。</p>
-<h4 id="Docker命令中flag的解析"><a href="#Docker命令中flag的解析" class="headerlink" title="Docker命令中flag的解析"></a>Docker命令中flag的解析</h4><p>对于flag的定义以及用法，可以看我前文对mflag包的分析。<br>回到docker.go，首先是四个包级变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var (</div><div class="line">	commonFlags = cliflags.InitCommonFlags()</div><div class="line">	clientFlags = initClientFlags(commonFlags)</div><div class="line">	flHelp      = flag.Bool([]string&#123;&quot;h&quot;, &quot;-help&quot;&#125;, false, &quot;Print usage&quot;)</div><div class="line">	flVersion   = flag.Bool([]string&#123;&quot;v&quot;, &quot;-version&quot;&#125;, false, &quot;Print version information and quit&quot;)</div><div class="line">)</div></pre></td></tr></table></figure></p>
-<p><strong>commonFlags：</strong> commonFlags是client和daemon通用的flags。注册了debug模式、日志等级、tls相关、host等flag；定义了PostParse（）函数，PostParse主要设置日志等级以及tls验证的处理。<br>commonFlags里注册的flags：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">cmd.BoolVar(&amp;commonFlags.Debug, []string&#123;&quot;D&quot;, &quot;-debug&quot;&#125;, false, &quot;Enable debug mode&quot;)</div><div class="line">cmd.StringVar(&amp;commonFlags.LogLevel, []string&#123;&quot;l&quot;, &quot;-log-level&quot;&#125;, &quot;info&quot;, &quot;Set the logging level&quot;)</div><div class="line">cmd.BoolVar(&amp;commonFlags.TLS, []string&#123;&quot;-tls&quot;&#125;, false, &quot;Use TLS; implied by --tlsverify&quot;)</div><div class="line">cmd.BoolVar(&amp;commonFlags.TLSVerify, []string&#123;&quot;-tlsverify&quot;&#125;, dockerTLSVerify, &quot;Use TLS and verify the remote&quot;)</div><div class="line">cmd.StringVar(&amp;tlsOptions.CAFile, []string&#123;&quot;-tlscacert&quot;&#125;, filepath.Join(dockerCertPath, DefaultCaFile), &quot;Trust certs signed only by this CA&quot;)</div><div class="line">cmd.StringVar(&amp;tlsOptions.CertFile, []string&#123;&quot;-tlscert&quot;&#125;, filepath.Join(dockerCertPath, DefaultCertFile), &quot;Path to TLS certificate file&quot;)</div><div class="line">cmd.StringVar(&amp;tlsOptions.KeyFile, []string&#123;&quot;-tlskey&quot;&#125;, filepath.Join(dockerCertPath, DefaultKeyFile), &quot;Path to TLS key file&quot;)</div><div class="line">cmd.Var(opts.NewNamedListOptsRef(&quot;hosts&quot;, &amp;commonFlags.Hosts, opts.ValidateHost), []string&#123;&quot;H&quot;, &quot;-host&quot;&#125;, &quot;Daemon socket(s) to connect to&quot;)</div></pre></td></tr></table></figure></p>
-<p><strong>clientFlags：</strong> clientFlags包含了commonFlags，注册了config，用于指定client的配置文件；在PostParse（）中设置config的目录、trustkey和是否开启debug模式。<br>clientFlags注册的flag：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">client.StringVar(&amp;clientFlags.ConfigDir, []string&#123;&quot;-config&quot;&#125;, cliconfig.ConfigDir(), &quot;Location of client config files&quot;)</div></pre></td></tr></table></figure></p>
-<p><strong>flHelp：</strong> help flag<br><strong>flVersion：</strong> version flag<br>至此，docker client的所有flag都已注册完成。<br>因为刚刚实际使用了cliflags.CommonFlags、cliflags.ClientFlags、flag.CommandLine三种结构来存储注册的flags，因此需要将这些分散的flags合并：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flag.Merge(flag.CommandLine, clientFlags.FlagSet, commonFlags.FlagSet)</div></pre></td></tr></table></figure></p>
-<p>在之前对mflag包分析时就提过，flag在使用之前需要先解析：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flag.Parse()</div></pre></td></tr></table></figure></p>
-<p>所以在解析用户命令时，如果遇到 <code>-v | --version | -h | --help</code> ，就会将 <strong>flHelp</strong> 或 <strong>flVersion</strong> 指针指向的bool值设为真。因此下面的代码就会执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">if *flVersion &#123;</div><div class="line">	showVersion()</div><div class="line">	return</div><div class="line">&#125;</div><div class="line">if *flHelp &#123;</div><div class="line">	// if global flag --help is present, regardless of what other options and commands there are,</div><div class="line">	// just print the usage.</div><div class="line">	flag.Usage()</div><div class="line">	return</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>这里也就是输出版本信息或help信息之后直接退出。</p>
-<h4 id="Docker-Client创建"><a href="#Docker-Client创建" class="headerlink" title="Docker Client创建"></a>Docker Client创建</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">clientCli := client.NewDockerCli(stdin, stdout, stderr, clientFlags)</div></pre></td></tr></table></figure>
-<p>这里根据之前解析的clientFlags来创建Docker Client。我们首先来看clientCli的结构信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">type DockerCli struct &#123;</div><div class="line">	// initializing closure</div><div class="line">	init func() error</div><div class="line"></div><div class="line">	// configFile has the client configuration file</div><div class="line">	configFile *configfile.ConfigFile</div><div class="line">	// in holds the input stream and closer (io.ReadCloser) for the client.</div><div class="line">	in io.ReadCloser</div><div class="line">	// out holds the output stream (io.Writer) for the client.</div><div class="line">	out io.Writer</div><div class="line">	// err holds the error stream (io.Writer) for the client.</div><div class="line">	err io.Writer</div><div class="line">	// keyFile holds the key file as a string.</div><div class="line">	keyFile string</div><div class="line">	// client is the http client that performs all API operations</div><div class="line">	client client.APIClient</div><div class="line">	......</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>我们看看NewDockerCli是如何返回DockerCli实例的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">func NewDockerCli(in io.ReadCloser, out, err io.Writer, clientFlags *cliflags.ClientFlags) *DockerCli &#123;</div><div class="line">	cli := &amp;DockerCli&#123;</div><div class="line">		in:      in,</div><div class="line">		out:     out,</div><div class="line">		err:     err,</div><div class="line">		keyFile: clientFlags.Common.TrustKey,</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	cli.init = func() error &#123;</div><div class="line">		clientFlags.PostParse()</div><div class="line">		cli.configFile = LoadDefaultConfigFile(err)</div><div class="line"></div><div class="line">		client, err := NewAPIClientFromFlags(clientFlags, cli.configFile)</div><div class="line">		if err != nil &#123;</div><div class="line">			return err</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		cli.client = client</div><div class="line"></div><div class="line">		if cli.in != nil &#123;</div><div class="line">			cli.inFd, cli.isTerminalIn = term.GetFdInfo(cli.in)</div><div class="line">		&#125;</div><div class="line">		if cli.out != nil &#123;</div><div class="line">			cli.outFd, cli.isTerminalOut = term.GetFdInfo(cli.out)</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		return nil</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	return cli</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>首先是对输入、输出和错误流的设置以及keyFile的设置，keyFile就是CommonFlags中的TrustKey。如果TrustKey没有设置，那么它的默认值就是 <strong>~/.docker/key.json</strong> （~/.docker为默认的配置文件目录，key.josn为默认trust key）。<br>然后设置init函数。在init函数中首先执行了传入的clientFlags的PostParse（），而clientFlagsPostParse（）会先调用CommonFlags的postParse（）函数。这样就会对之前注册的一系列flags进行验证：</p>
-<ol>
-<li>根据 <strong>-l | –log-level</strong> 设置日志等级（默认为info）</li>
-<li>如果设置 <strong>–tlsverify</strong> 为true，那么强制 <strong>CommonFlags.TLS</strong> 为true。</li>
-<li>根据是否进行tls验证来设置tls验证的信息，根据 <strong>–tlscert</strong> 和 <strong>–tlskey</strong> 来设置cert和key文件。</li>
-<li>根据 <strong>–config</strong> 设置客户端各种配置文件的目录，默认值为 <strong>~/.docker</strong> 。</li>
-<li>根据 <strong>-D | –debug</strong> 是否开启debug模式。</li>
-</ol>
-<p>回到init函数中，接下来根据指定的本地配置文件来设置configFile。<br>根据传入的clientFlags和上文的configFile来创建APIClient。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">func NewAPIClientFromFlags(clientFlags *cliflags.ClientFlags, configFile *configfile.ConfigFile) (client.APIClient, error) &#123;</div><div class="line">	host, err := getServerHost(clientFlags.Common.Hosts, clientFlags.Common.TLSOptions)</div><div class="line">	if err != nil &#123;</div><div class="line">		return &amp;client.Client&#123;&#125;, err</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	customHeaders := configFile.HTTPHeaders</div><div class="line">	if customHeaders == nil &#123;</div><div class="line">		customHeaders = map[string]string&#123;&#125;</div><div class="line">	&#125;</div><div class="line">	customHeaders[&quot;User-Agent&quot;] = clientUserAgent()</div><div class="line"></div><div class="line">	verStr := api.DefaultVersion</div><div class="line">	if tmpStr := os.Getenv(&quot;DOCKER_API_VERSION&quot;); tmpStr != &quot;&quot; &#123;</div><div class="line">		verStr = tmpStr</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	httpClient, err := newHTTPClient(host, clientFlags.Common.TLSOptions)</div><div class="line">	if err != nil &#123;</div><div class="line">		return &amp;client.Client&#123;&#125;, err</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	return client.NewClient(host, verStr, httpClient, customHeaders)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>首先是host的获取，这里host也就是Docker Server提供所要监听的对象。host首先是通过 <strong>-H | –host=[]</strong> 来指定的，如果没有指定，那么会从环境变量 <strong>DOCKER_HOST</strong> 中获取。如果这里也没有，同时没有指定tls认证的话，那么就会设置为默认值： <strong>DefaultHost</strong> ，其值为 <strong>unix:///var/run/docker.sock</strong> ；没有host却指定tls验证，那么就会设置成带tls的默认值： <strong>DefaultTLSHost</strong> ，其值为 <strong>tcp://localhost:2376</strong>  。<br>还有一个重要的就是httpClient的创建。如果tlsOptions为nil，那么http.Client为nil（如果为nil，APIClient会配置默认的transport）；否则根据tlsOptions创建http.Client。<br>这样APIClient创建好了，DockerCli也就创建好了。</p>
-<h4 id="CobraAdaptor的创建"><a href="#CobraAdaptor的创建" class="headerlink" title="CobraAdaptor的创建"></a>CobraAdaptor的创建</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cobraAdaptor := cobraadaptor.NewCobraAdaptor(clientFlags)</div></pre></td></tr></table></figure>
-<p>CobraAdaptor是一个用来支持 <strong>spf13/cobra</strong> 的适配器。<br>这里先介绍一下spf13/cobra。Cobra主要有两个作用，这里我们只关心第一个。当Cobra作为一个库时，提供了简单的接口来创建命令行接口（类似git和go这样的工具）。Cobra工作原理是先创建一系列的Command然后将它们组织成树结构，最上层是root command，在这里就是 <strong>docker</strong> ，然后每个Command都可以定义子Command。当一个Command执行时，会根据它的flag来运行具体的逻辑。Cobra： <a href="https://github.com/spf13/cobra" target="_blank" rel="external">github.com/spf13/cobra</a><br>CobraAdaptor结构：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">type CobraAdaptor struct &#123;</div><div class="line">	rootCmd   *cobra.Command</div><div class="line">	dockerCli *client.DockerCli</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>rootCmd：</strong> 根命令，在这里就是 <strong>docker</strong> 。<br>rootCmd的定义：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var rootCmd = &amp;cobra.Command&#123;</div><div class="line">		Use:           &quot;docker [OPTIONS]&quot;,</div><div class="line">		Short:         &quot;A self-sufficient runtime for containers&quot;,</div><div class="line">		SilenceUsage:  true,</div><div class="line">		SilenceErrors: true,</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
-<p>同时还添加了很多子命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">rootCmd.AddCommand(</div><div class="line">		node.NewNodeCommand(dockerCli),</div><div class="line">		service.NewServiceCommand(dockerCli),</div><div class="line">		container.NewCommitCommand(dockerCli),</div><div class="line">		container.NewCopyCommand(dockerCli),</div><div class="line">		.......</div><div class="line">)</div></pre></td></tr></table></figure></p>
-<p><strong>dockerCli：</strong> 就是上面介绍的Docker Client。</p>
-<h4 id="Docker-Client的运行"><a href="#Docker-Client的运行" class="headerlink" title="Docker Client的运行"></a>Docker Client的运行</h4><p>Docker Client的运行是通过Cli的Run方法。Cli是什么？Cli是命令行接口。我们先来看Cli的结构：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">type Cli struct &#123;</div><div class="line">	Stderr   io.Writer</div><div class="line">	handlers []Handler</div><div class="line">	Usage    func()</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>这里我们需要关注 <strong>handlers</strong> ，它是 <strong>Handler</strong> 型的slice。那 <strong>Handler</strong> 又是什么？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">type Handler interface &#123;</div><div class="line">	Command(name string) func(...string) error</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>Handler接口规定了 <strong>Command</strong> 方法：根据指定的名称返回一个函数。<br>我们再来看看Cli的创建：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">c := cli.New(clientCli, NewDaemonProxy(), cobraAdaptor)</div><div class="line"></div><div class="line">//此函数在docker/cli/cli.go中</div><div class="line">func New(handlers ...Handler) *Cli &#123;</div><div class="line">	// make the generic Cli object the first cli handler</div><div class="line">	// in order to handle `docker help` appropriately</div><div class="line">	cli := new(Cli)</div><div class="line">	cli.handlers = append([]Handler&#123;cli&#125;, handlers...)</div><div class="line">	return cli</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>我们可以看到New函数的参数是Handler类型的可变参数，具体做法是将这些Handler都添加到Cli.handlers中（包括自己）。<br>在创建时传入的参数为：clientCli、NewDaemonProxy()、 cobraAdaptor，这就说明它们都实现了Command方法。</p>
-<ul>
-<li><p>clientCli的类型是DockerCli，DockerCli的Command方法是通过预先定义好的 <strong>map[string]func(…string)</strong> ，然后通过取name对应的方法，其中cli.CmdExec等就是对应的处理函数了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">func (cli *DockerCli) Command(name string) func(...string) error &#123;</div><div class="line">	return map[string]func(...string) error&#123;</div><div class="line">		&quot;exec&quot;:    cli.CmdExec,</div><div class="line">		&quot;info&quot;:    cli.CmdInfo,</div><div class="line">		&quot;inspect&quot;: cli.CmdInspect,</div><div class="line">		&quot;update&quot;:  cli.CmdUpdate,</div><div class="line">	&#125;[name]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>NewDaemonProxy()返回的是DaemonProxy类型，它的Command方法和上面类似：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">func (p DaemonProxy) Command(name string) func(...string) error &#123;</div><div class="line">	return map[string]func(...string) error&#123;</div><div class="line">		&quot;daemon&quot;: p.CmdDaemon,</div><div class="line">	&#125;[name]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>CobraAdaptor的Command方法稍微复杂一点，首先是range自己的子命令，如果名称相同，就会返回处理函数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">func (c CobraAdaptor) Command(name string) func(...string) error &#123;</div><div class="line">	for _, cmd := range c.rootCmd.Commands() &#123;</div><div class="line">		if cmd.Name() == name &#123;</div><div class="line">			return func(args ...string) error &#123;</div><div class="line">				return c.run(name, args)</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return nil</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>最后，我们来看如何Cli是如何运行的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if err := c.Run(flag.Args()...); err != nil &#123;</div><div class="line">		......</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
-<p>运行是调用Cli的Run方法，参数是flag.Args()。flag.Args()的返回值就是命令行被解析之后，flag之后的参数。举个例子：<br><code>docker -H=192.168.1.1 ps -a</code> ，这条命令经过解析之后192.168.1.1这个地址就会被添加到CommonFlags.Host中，而后面的 <code>ps -a</code> 则会被添加到FlagSet.args中，而flag.Args()返回的正是这个args（在例子中也就是 [“ps”, “-a”]）。<br>具体的Run方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">func (cli *Cli) Run(args ...string) error &#123;</div><div class="line">	if len(args) &gt; 1 &#123;</div><div class="line">		command, err := cli.command(args[:2]...)</div><div class="line">		if err == nil &#123;</div><div class="line">			return command(args[2:]...)</div><div class="line">		&#125;</div><div class="line">		if err != errCommandNotFound &#123;</div><div class="line">			return err</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	if len(args) &gt; 0 &#123;</div><div class="line">		command, err := cli.command(args[0])</div><div class="line">		if err != nil &#123;</div><div class="line">			if err == errCommandNotFound &#123;</div><div class="line">				cli.noSuchCommand(args[0])</div><div class="line">				return nil</div><div class="line">			&#125;</div><div class="line">			return err</div><div class="line">		&#125;</div><div class="line">		return command(args[1:]...)</div><div class="line">	&#125;</div><div class="line">	return cli.CmdHelp()</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>因为参数是 <code>docker [OPTIONS] COMMAND [arg...]</code> 中的 <code>COMMAND [arg...]</code> ，因此可以分为三种情况：</p>
-<ol>
-<li><code>COMMAND [arg...]</code> 都存在；</li>
-<li>只有<code>COMMAND</code> ；</li>
-<li>什么都没有（直接返回帮助信息）。</li>
-</ol>
-<p>这里先判断参数是否大于1，是因为有些 <code>COMMAND</code> 可能会有subCommamd。比如： <code>docker swarm init</code> 。这里的init其实swarm的子命令，而不是swarm的参数。<br><code>command, err := cli.command(args[:2]...)</code> 这里需要注意两个command不是一个概念，前面是后面的返回值。<br>我们来看一下后面的那个command方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">func (cli *Cli) command(args ...string) (func(...string) error, error) &#123;</div><div class="line">	for _, c := range cli.handlers &#123;</div><div class="line">		if c == nil &#123;</div><div class="line">			continue</div><div class="line">		&#125;</div><div class="line">		if cmd := c.Command(strings.Join(args, &quot; &quot;)); cmd != nil &#123;</div><div class="line">			if ci, ok := c.(Initializer); ok &#123;</div><div class="line">				if err := ci.Initialize(); err != nil &#123;</div><div class="line">					return nil, err</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			return cmd, nil</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return nil, errCommandNotFound</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>其实就是range我们传入的Handlers，调用每个Handler的Command方法来找到与名称对应的函数，如果同样实现了Initializer的接口则运行Initialize方法，最后将函数返回，赋值给command。<br>最后一步，则是运行这个返回的函数，在这个函数中会向Docker Server发起HTTP请求。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1579,7 +1518,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
