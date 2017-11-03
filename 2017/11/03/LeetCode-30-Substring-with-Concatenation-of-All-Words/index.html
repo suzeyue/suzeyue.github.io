@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="Description Given a linked list, swap every two adjacent nodes and return its head.  For example,  Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4 , you should return the list as 2-&amp;gt;1-&amp;gt;4-&amp;gt;3 .  Your algorithm shoul">
+<meta name="description" content="DescriptionYou are given a string, s, and a list of words, words, that are all of the same length. Find all starting indices of substring(s) in s that is a concatenation of each word in words exactly">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode-24.Swap Nodes in Pairs">
-<meta property="og:url" content="http://yoursite.com/2017/10/27/LeetCode-24-Swap-Nodes-in-Pairs/index.html">
+<meta property="og:title" content="LeetCode-30.Substring with Concatenation of All Words">
+<meta property="og:url" content="http://yoursite.com/2017/11/03/LeetCode-30-Substring-with-Concatenation-of-All-Words/index.html">
 <meta property="og:site_name" content="Talk is cheap.">
-<meta property="og:description" content="Description Given a linked list, swap every two adjacent nodes and return its head.  For example,  Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4 , you should return the list as 2-&amp;gt;1-&amp;gt;4-&amp;gt;3 .  Your algorithm shoul">
+<meta property="og:description" content="DescriptionYou are given a string, s, and a list of words, words, that are all of the same length. Find all starting indices of substring(s) in s that is a concatenation of each word in words exactly">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-27T09:19:45.405Z">
+<meta property="og:updated_time" content="2017-11-03T06:28:54.927Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode-24.Swap Nodes in Pairs">
-<meta name="twitter:description" content="Description Given a linked list, swap every two adjacent nodes and return its head.  For example,  Given 1-&amp;gt;2-&amp;gt;3-&amp;gt;4 , you should return the list as 2-&amp;gt;1-&amp;gt;4-&amp;gt;3 .  Your algorithm shoul">
+<meta name="twitter:title" content="LeetCode-30.Substring with Concatenation of All Words">
+<meta name="twitter:description" content="DescriptionYou are given a string, s, and a list of words, words, that are all of the same length. Find all starting indices of substring(s) in s that is a concatenation of each word in words exactly">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/27/LeetCode-24-Swap-Nodes-in-Pairs/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/03/LeetCode-30-Substring-with-Concatenation-of-All-Words/"/>
 
 
 
 
 
-  <title>LeetCode-24.Swap Nodes in Pairs | Talk is cheap.</title>
+  <title>LeetCode-30.Substring with Concatenation of All Words | Talk is cheap.</title>
   
 
 
@@ -267,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/27/LeetCode-24-Swap-Nodes-in-Pairs/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/03/LeetCode-30-Substring-with-Concatenation-of-All-Words/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Su">
@@ -284,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode-24.Swap Nodes in Pairs</h1>
+          <h1 class="post-title" itemprop="name headline">LeetCode-30.Substring with Concatenation of All Words</h1>
         
 
         <div class="post-meta">
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T16:05:02+08:00">
-                2017-10-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-03T10:17:34+08:00">
+                2017-11-03
               </time>
             
 
@@ -334,9 +334,17 @@
       
 
       
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p><strong> Given a linked list, swap every two adjacent nodes and return its head. </strong><br><strong> For example, </strong><br><strong> Given <code>1-&gt;2-&gt;3-&gt;4</code> , you should return the list as <code>2-&gt;1-&gt;4-&gt;3</code> . </strong><br><strong> Your algorithm should use only constant space. You may not modify the values in the list, only nodes itself can be changed. </strong></p>
-<p>单链表操作，主要需要记住链表头以及下一对需要交换的node。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * Definition for singly-linked list.</div><div class="line"> * type ListNode struct &#123;</div><div class="line"> *     Val int</div><div class="line"> *     Next *ListNode</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line">func swapPairs(head *ListNode) *ListNode &#123;</div><div class="line">    if head == nil || head.Next == nil &#123;</div><div class="line">        return head</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    var mark = new(ListNode)</div><div class="line">    mark.Next = head</div><div class="line">    node1, node2 := mark, head</div><div class="line">    for ; node2 != nil &amp;&amp; node2.Next != nil; &#123;</div><div class="line">        tmp := node2.Next.Next</div><div class="line">        node2.Next.Next = node2</div><div class="line">        node1.Next = node2.Next</div><div class="line">        node2.Next = tmp</div><div class="line">        node1 = node2</div><div class="line">        node2 = node2.Next</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return mark.Next</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>You are given a string, s, and a list of words, words, that are all of the same length. Find all starting indices of substring(s) in s that is a concatenation of each word in words exactly once and without any intervening characters.</p>
+<p>For example, given:<br>s: <code>&quot;barfoothefoobarman&quot;</code><br>words: <code>[&quot;foo&quot;, &quot;bar&quot;]</code></p>
+<p>You should return the indices: <code>[0,9]</code> .</p>
+<p>这题要求给出包含列表里所有字符串的子串的下标。<br>从题中可以知道list中的字符串的长度都是相等的，那么对于字符串s的扫描，我们只需要按照word的长度，这样就可以包含所有的情况。例：s为 <code>abcdefghi</code> ，word的长度为 <code>3</code> ，那么情况就是 <code>abc</code> , <code>def</code> , <code>ghi</code> , <code>bcd</code> , <code>efg</code> , <code>cde</code> , <code>fgh</code> .<br>另外需要两个map（wordMap、curMap）、变量count和变量left。第一个map用来存放list中的words，第二个map中则放着当前循环中取出的并且存在于wordMap中的字符串；count用来记录当前子串中的word数量；left为子串的下标。<br>具体思路：</p>
+<ol>
+<li>将list中的word存放到wordMap中，vlaue为key出现的次数。</li>
+<li>以word的长度为步长，获取slice（即word）。如果此slice在wordMap中，将此slice置入curMap。如果此slice的value大于wordMap中的value，这就代表此时的字符串有多于word，将之前第一次出现的剔除；如果不在，则将count置零，将left后移。</li>
+<li>如果此时count的值等于list的长度，那么代表找到一个解。将下表left放入列表中待返回后，将left后移一位，curMap中以left为起始的word计数减一，count减一，继续循环。</li>
+</ol>
+<p>参考：<a href="https://segmentfault.com/a/1190000002625580" target="_blank" rel="external">findingea</a></p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line">func findSubstring(s string, words []string) []int &#123;    </div><div class="line">    if len(s) == 0 || len(words) == 0 &#123;</div><div class="line">        return []int&#123;&#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    var result []int</div><div class="line">    wordMap := make(map[string]int)</div><div class="line">    strLength := len(s)</div><div class="line">    wordLength := len(words[0])</div><div class="line">    for _, word := range words &#123;</div><div class="line">        wordMap[word]++</div><div class="line">    &#125;</div><div class="line">    for i := 0; i &lt; wordLength; i++ &#123;</div><div class="line">        curMap := make(map[string]int)</div><div class="line">        count, left := 0, i</div><div class="line">        for j := i; j &lt;= strLength - wordLength; j += wordLength &#123;</div><div class="line">            curStr := string(s[j:j + wordLength])</div><div class="line">            if _, ok := wordMap[curStr]; ok &#123;</div><div class="line">                curMap[curStr]++</div><div class="line">                if curMap[curStr] &lt;= wordMap[curStr] &#123;</div><div class="line">                    count++</div><div class="line">                &#125; else &#123;</div><div class="line">                    for true &#123;</div><div class="line">                        tmp := string(s[left:left + wordLength])</div><div class="line">                        curMap[tmp]--</div><div class="line">                        left += wordLength</div><div class="line">                        if curStr == tmp &#123;</div><div class="line">                            break</div><div class="line">                        &#125; else &#123;</div><div class="line">                            count--</div><div class="line">                        &#125;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                if count == len(words) &#123;</div><div class="line">                    result = append(result, left)</div><div class="line">                    tmp := string(s[left:left + wordLength])</div><div class="line">                    curMap[tmp]--</div><div class="line">                    left += wordLength</div><div class="line">                    count--</div><div class="line">                &#125;</div><div class="line">            &#125; else &#123;</div><div class="line">                count = 0</div><div class="line">                left = j + wordLength</div><div class="line">                curMap = make(map[string]int)</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return result</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -367,8 +375,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/25/LeetCode-23-Merge-k-Sorted-Lists/" rel="next" title="LeetCode-23.Merge k Sorted Lists">
-                <i class="fa fa-chevron-left"></i> LeetCode-23.Merge k Sorted Lists
+              <a href="/2017/11/01/LeetCode-29-Divide-Two-Integers/" rel="next" title="LeetCode-29.Divide Two Integers">
+                <i class="fa fa-chevron-left"></i> LeetCode-29.Divide Two Integers
               </a>
             
           </div>
@@ -376,10 +384,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/29/LeetCode-25-Reverse-Nodes-in-k-Group/" rel="prev" title="LeetCode-25.Reverse Nodes in k-Group">
-                LeetCode-25.Reverse Nodes in k-Group <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -504,7 +508,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code"><span class="nav-number">2.</span> <span class="nav-text">Code</span></a></li></ol></div>
             
 
           </div>
