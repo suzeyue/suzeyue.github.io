@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="DescriptionGiven a sorted array, remove the duplicates in place such that each element appear only once and return the new length.Do not allocate extra space for another array, you must do this in pla">
+<meta name="description" content="DescriptionGiven a string containing just the characters &amp;#39;(&amp;#39; and &amp;#39;)&amp;#39; , find the length of the longest valid (well-formed) parentheses substring.For &amp;quot;(()&amp;quot; , the longest valid">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode-26.Remove Duplicates from Sorted Array">
-<meta property="og:url" content="http://yoursite.com/2017/10/30/LeetCode-26-Remove-Duplicates-from-Sorted-Array/index.html">
+<meta property="og:title" content="LeetCode-32.Longest Valid Parentheses">
+<meta property="og:url" content="http://yoursite.com/2017/11/06/LeetCode-32-Longest-Valid-Parentheses/index.html">
 <meta property="og:site_name" content="Talk is cheap.">
-<meta property="og:description" content="DescriptionGiven a sorted array, remove the duplicates in place such that each element appear only once and return the new length.Do not allocate extra space for another array, you must do this in pla">
+<meta property="og:description" content="DescriptionGiven a string containing just the characters &amp;#39;(&amp;#39; and &amp;#39;)&amp;#39; , find the length of the longest valid (well-formed) parentheses substring.For &amp;quot;(()&amp;quot; , the longest valid">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-30T02:33:30.035Z">
+<meta property="og:updated_time" content="2017-11-06T03:57:39.373Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode-26.Remove Duplicates from Sorted Array">
-<meta name="twitter:description" content="DescriptionGiven a sorted array, remove the duplicates in place such that each element appear only once and return the new length.Do not allocate extra space for another array, you must do this in pla">
+<meta name="twitter:title" content="LeetCode-32.Longest Valid Parentheses">
+<meta name="twitter:description" content="DescriptionGiven a string containing just the characters &amp;#39;(&amp;#39; and &amp;#39;)&amp;#39; , find the length of the longest valid (well-formed) parentheses substring.For &amp;quot;(()&amp;quot; , the longest valid">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/30/LeetCode-26-Remove-Duplicates-from-Sorted-Array/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/06/LeetCode-32-Longest-Valid-Parentheses/"/>
 
 
 
 
 
-  <title>LeetCode-26.Remove Duplicates from Sorted Array | Talk is cheap.</title>
+  <title>LeetCode-32.Longest Valid Parentheses | Talk is cheap.</title>
   
 
 
@@ -267,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/30/LeetCode-26-Remove-Duplicates-from-Sorted-Array/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/06/LeetCode-32-Longest-Valid-Parentheses/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Su">
@@ -284,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode-26.Remove Duplicates from Sorted Array</h1>
+          <h1 class="post-title" itemprop="name headline">LeetCode-32.Longest Valid Parentheses</h1>
         
 
         <div class="post-meta">
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-30T10:26:38+08:00">
-                2017-10-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-06T11:53:54+08:00">
+                2017-11-06
               </time>
             
 
@@ -334,8 +334,10 @@
       
 
       
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.<br>Do not allocate extra space for another array, you must do this in place with constant memory.<br>For example,<br>Given input array nums = <code>[1,1,2]</code> ,<br>Your function should return length = <code>2</code> , with the first two elements of nums being <code>1</code> and <code>2</code> respectively. It doesn’t matter what you leave beyond the new length.</p>
-<h3 id="code"><a href="#code" class="headerlink" title="code"></a>code</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">func removeDuplicates(nums []int) int &#123;</div><div class="line">    length := len(nums)</div><div class="line">    if length &lt;= 1 &#123;</div><div class="line">        return length</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    result := 1</div><div class="line">    for i := 1; i &lt; length; i++ &#123;</div><div class="line">        if nums[i] != nums[i - 1] &#123;</div><div class="line">            nums[result] = nums[i]</div><div class="line">            result++</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return result</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>Given a string containing just the characters <code>&#39;(&#39;</code> and <code>&#39;)&#39;</code> , find the length of the longest valid (well-formed) parentheses substring.<br>For <code>&quot;(()&quot;</code> , the longest valid parentheses substring is <code>&quot;()&quot;</code> , which has length = 2.<br>Another example is <code>&quot;)()())&quot;</code> , where the longest valid parentheses substring is <code>&quot;()()&quot;</code> , which has length = 4.</p>
+<p>利用stack来处理，另外还有动态规划的方法。</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><h4 id="stack"><a href="#stack" class="headerlink" title="stack"></a>stack</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">func longestValidParentheses(s string) int &#123;</div><div class="line">    strLen := len(s)</div><div class="line">    if strLen &lt;= 1 &#123;</div><div class="line">        return 0</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    var stack []int</div><div class="line">    var index, result int</div><div class="line">    for k, v := range s &#123;</div><div class="line">        if v == &apos;(&apos; &#123;</div><div class="line">            stack = append(stack, k)</div><div class="line">        &#125;</div><div class="line">        if v == &apos;)&apos; &#123;</div><div class="line">            if len(stack) == 0 &#123;</div><div class="line">                index = k + 1</div><div class="line">            &#125; else &#123;</div><div class="line">                stack = stack[:len(stack) - 1]</div><div class="line">                if len(stack) == 0 &#123;</div><div class="line">                    result = int(math.Max(float64(result), float64(k - index + 1)))</div><div class="line">                &#125; else &#123;</div><div class="line">                    result = int(math.Max(float64(result), float64(k - stack[len(stack) - 1])))</div><div class="line">                &#125;</div><div class="line">            &#125;            </div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return result</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h4><p>（待补充）</p>
 
       
     </div>
@@ -366,8 +368,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/29/LeetCode-25-Reverse-Nodes-in-k-Group/" rel="next" title="LeetCode-25.Reverse Nodes in k-Group">
-                <i class="fa fa-chevron-left"></i> LeetCode-25.Reverse Nodes in k-Group
+              <a href="/2017/11/04/LeetCode-31-Next-Permutation/" rel="next" title="LeetCode-31.Next Permutation">
+                <i class="fa fa-chevron-left"></i> LeetCode-31.Next Permutation
               </a>
             
           </div>
@@ -375,10 +377,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/30/LeetCode-27-Remove-Element/" rel="prev" title="LeetCode-27.Remove Element">
-                LeetCode-27.Remove Element <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -503,7 +501,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#code"><span class="nav-number">2.</span> <span class="nav-text">code</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code"><span class="nav-number">2.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#stack"><span class="nav-number">2.1.</span> <span class="nav-text">stack</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动态规划"><span class="nav-number">2.2.</span> <span class="nav-text">动态规划</span></a></li></ol></li></ol></div>
             
 
           </div>

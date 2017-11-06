@@ -264,6 +264,127 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/12/LeetCode-22-Generate-Parentheses/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Su">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Talk is cheap.">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/12/LeetCode-22-Generate-Parentheses/" itemprop="url">LeetCode-22.Generate Parentheses</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-12T13:54:19+08:00">
+                2017-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">package leetcode</div><div class="line"></div><div class="line">//Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.</div><div class="line">//</div><div class="line">//For example, given n = 3, a solution set is:</div><div class="line">//</div><div class="line">//[</div><div class="line">//  &quot;((()))&quot;,</div><div class="line">//  &quot;(()())&quot;,</div><div class="line">//  &quot;(())()&quot;,</div><div class="line">//  &quot;()(())&quot;,</div><div class="line">//  &quot;()()()&quot;</div><div class="line">//]</div><div class="line"></div><div class="line">func GenerateParenthesis(n int) []string &#123;</div><div class="line">    var res []string</div><div class="line">    helper(n, n, &quot;&quot;, &amp;res)        </div><div class="line">    return res</div><div class="line">&#125;</div><div class="line"></div><div class="line">func helper(left, right int, out string, res *[]string) &#123;</div><div class="line">    if left &lt; 0 || right &lt; 0 || left &gt; right &#123;</div><div class="line">        return</div><div class="line">    &#125;  </div><div class="line">    if left == 0 &amp;&amp; right == 0 &#123;</div><div class="line">        *res = append(*res, out)</div><div class="line">        return</div><div class="line">    &#125;</div><div class="line">    helper(left - 1, right, out + &quot;(&quot;, res)</div><div class="line">    helper(left, right - 1, out + &quot;)&quot;, res)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>参考 <strong>Grandyang</strong> 的博客：<a href="http://www.cnblogs.com/grandyang/p/4444160.html" target="_blank" rel="external">[LeetCode] Generate Parentheses 生成括号</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/11/LeetCode-21-Merge-Two-Sorted-Lists/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1346,129 +1467,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/29/LeetCode-12-Integer-to-Roman/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Su">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Talk is cheap.">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/29/LeetCode-12-Integer-to-Roman/" itemprop="url">LeetCode-12.Integer to Roman</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-29T11:02:28+08:00">
-                2017-08-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">package leetcode</div><div class="line"></div><div class="line">//Given an integer, convert it to a roman numeral.</div><div class="line">//Input is guaranteed to be within the range from 1 to 3999.</div><div class="line"></div><div class="line">func IntToRoman(num int) string &#123;</div><div class="line">    var roman = []byte&#123;&apos;M&apos;, &apos;D&apos;, &apos;C&apos;, &apos;L&apos;, &apos;X&apos;, &apos;V&apos;, &apos;I&apos;&#125;</div><div class="line">    var value = []int&#123;1000, 500, 100, 50, 10, 5, 1,&#125;</div><div class="line">    var result []byte</div><div class="line">    for i := 0 ; i &lt; 7 ; i += 2 &#123;</div><div class="line">        x := num / value[i]</div><div class="line">        switch &#123;</div><div class="line">            case x == 9: &#123;</div><div class="line">                result = append(result, roman[i])</div><div class="line">                result = append(result, roman[i - 2])</div><div class="line">            &#125;</div><div class="line">            case x &gt; 4: &#123;</div><div class="line">                result = append(result, roman[i - 1])</div><div class="line">                for j := 6; j &lt;= x; j++ &#123;</div><div class="line">                    result = append(result, roman[i])</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            case x == 4: &#123;</div><div class="line">                result = append(result, roman[i])</div><div class="line">                result = append(result, roman[i - 1])</div><div class="line">            &#125;</div><div class="line">            default: &#123;</div><div class="line">                for j := 1; j &lt;= x; j++ &#123;</div><div class="line">                    result = append(result, roman[i])</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        num %= value[i]</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return string(result)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>数字转换成罗马文，首先要知道罗马文表示方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">I    V    X    L    C    D    M</div><div class="line">1    5    10   50   100  500  1000</div></pre></td></tr></table></figure></p>
-<p>因为已规定输入的范围：1~3999 ，所以这里没有验证输入的合法性。<br>同时根据已知范围，可以列出所有情况，时间复杂度为：O（1）<br>参考：<a href="http://www.cnblogs.com/grandyang/p/4123374.html" target="_blank" rel="external">Grandyang的Blog</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">func intToRoman(num int) string &#123;</div><div class="line">    var M = [4]string&#123;&quot;&quot;, &quot;M&quot;, &quot;MM&quot;, &quot;MMM&quot;&#125;</div><div class="line">    var	C = [10]string&#123;&quot;&quot;, &quot;C&quot;, &quot;CC&quot;, &quot;CCC&quot;, &quot;CD&quot;, &quot;D&quot;, &quot;DC&quot;, &quot;DCC&quot;, &quot;DCCC&quot;, &quot;CM&quot;&#125;</div><div class="line">    var	X = [10]string&#123;&quot;&quot;, &quot;X&quot;, &quot;XX&quot;, &quot;XXX&quot;, &quot;XL&quot;, &quot;L&quot;, &quot;LX&quot;, &quot;LXX&quot;, &quot;LXXX&quot;, &quot;XC&quot;&#125;</div><div class="line">    var	I = [10]string&#123;&quot;&quot;, &quot;I&quot;, &quot;II&quot;, &quot;III&quot;, &quot;IV&quot;, &quot;V&quot;, &quot;VI&quot;, &quot;VII&quot;, &quot;VIII&quot;, &quot;IX&quot;&#125;</div><div class="line">    return M[num / 1000] + C[(num % 1000) / 100] + X[(num % 100) / 10] + I[num % 10]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1519,7 +1517,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
