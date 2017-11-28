@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445package leetcode//Given an array S of n integers, find three integers in S such that the sum is closest to a given numb">
+<meta name="description" content="DescriptionGiven an array of integers sorted in ascending order, find the starting and ending position of a given target value.Your algorithm’s runtime complexity must be in the order of O(log n).If t">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode-16.3Sum Closest">
-<meta property="og:url" content="http://yoursite.com/2017/09/01/LeetCode-16-3Sum-Closest/index.html">
+<meta property="og:title" content="LeetCode-34.Search for a Range">
+<meta property="og:url" content="http://yoursite.com/2017/11/28/LeetCode-34-Search-for-a-Range/index.html">
 <meta property="og:site_name" content="Talk is cheap.">
-<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445package leetcode//Given an array S of n integers, find three integers in S such that the sum is closest to a given numb">
+<meta property="og:description" content="DescriptionGiven an array of integers sorted in ascending order, find the starting and ending position of a given target value.Your algorithm’s runtime complexity must be in the order of O(log n).If t">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-01T04:18:41.887Z">
+<meta property="og:updated_time" content="2017-11-28T06:51:31.436Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode-16.3Sum Closest">
-<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445package leetcode//Given an array S of n integers, find three integers in S such that the sum is closest to a given numb">
+<meta name="twitter:title" content="LeetCode-34.Search for a Range">
+<meta name="twitter:description" content="DescriptionGiven an array of integers sorted in ascending order, find the starting and ending position of a given target value.Your algorithm’s runtime complexity must be in the order of O(log n).If t">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/01/LeetCode-16-3Sum-Closest/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/28/LeetCode-34-Search-for-a-Range/"/>
 
 
 
 
 
-  <title>LeetCode-16.3Sum Closest | Talk is cheap.</title>
+  <title>LeetCode-34.Search for a Range | Talk is cheap.</title>
   
 
 
@@ -267,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/01/LeetCode-16-3Sum-Closest/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/28/LeetCode-34-Search-for-a-Range/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Su">
@@ -284,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode-16.3Sum Closest</h1>
+          <h1 class="post-title" itemprop="name headline">LeetCode-34.Search for a Range</h1>
         
 
         <div class="post-meta">
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-01T12:15:43+08:00">
-                2017-09-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-28T14:49:15+08:00">
+                2017-11-28
               </time>
             
 
@@ -334,8 +334,35 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">package leetcode</div><div class="line"></div><div class="line">//Given an array S of n integers, find three integers in S such that the sum is closest to a given number, target.</div><div class="line">//Return the sum of the three integers. You may assume that each input would have exactly one solution.</div><div class="line">//</div><div class="line">//For example, given array S = &#123;-1 2 1 -4&#125;, and target = 1.</div><div class="line">//The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).</div><div class="line"></div><div class="line">import (</div><div class="line">    &quot;math&quot;</div><div class="line">    &quot;sort&quot;</div><div class="line">)</div><div class="line"></div><div class="line">func ThreeSumClosest(nums []int, target int) int &#123;</div><div class="line">	length := len(nums)</div><div class="line">	if length &lt; 3 &#123;</div><div class="line">		return math.MaxInt32</div><div class="line">	&#125;</div><div class="line">	sort.Ints(nums)</div><div class="line">	minClosest := math.MaxInt32</div><div class="line"></div><div class="line">	for i := 0; i &lt; length - 2; i++ &#123;</div><div class="line">		if i &gt; 0 &amp;&amp; nums[i] == nums[i-1] &#123;</div><div class="line">			continue</div><div class="line">		&#125;</div><div class="line">		m,n := i + 1, length - 1</div><div class="line">		for ; m &lt; n; &#123;</div><div class="line">			closest := nums[i] +nums[m] + nums[n] - target</div><div class="line">			if math.Abs(float64(minClosest)) &gt; math.Abs(float64(closest)) &#123;</div><div class="line">				minClosest = closest</div><div class="line">			&#125;</div><div class="line">			if closest == 0 &#123;</div><div class="line">				return target</div><div class="line">			&#125;</div><div class="line">			if closest &gt; 0 &#123;</div><div class="line">				n--</div><div class="line">			&#125; else &#123;</div><div class="line">				m++</div><div class="line">			&#125;</div><div class="line"></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	return target + minClosest</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>3sum的变种，同样的思路。。。</p>
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>Given an array of integers sorted in ascending order, find the starting and ending position of a given target value.<br>Your algorithm’s runtime complexity must be in the order of O(log n).<br>If the target is not found in the array, return <code>[-1, -1]</code> .</p>
+<p>For example,<br>Given <code>[5, 7, 7, 8, 8, 10]</code> and target value 8,<br>return <code>[3, 4]</code> .</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><p>func searchRange(nums []int, target int) []int {<br>    lenN := len(nums)<br>    result := []int{-1, -1}<br>    if lenN &lt; 1 {<br>        return result<br>    }</p>
+<pre><code>head, tail := 0, lenN - 1
+for head &lt; tail {
+    mid := (head + tail) / 2
+    if nums[mid] &lt; target {
+        head = mid + 1
+    } else {
+        tail = mid
+    }
+}
+if nums[head] != target {
+    return result
+}
+result[0] = head
+tail = lenN
+for head &lt; tail {
+    mid := (head + tail) / 2
+    if nums[mid] &lt;= target {
+        head = mid + 1
+    } else {
+        tail = mid
+    }
+}
+result[1] = tail - 1
+
+return result
+</code></pre><p>}</p>
 
       
     </div>
@@ -366,8 +393,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/31/LeetCode-15-3Sum/" rel="next" title="LeetCode-15.3Sum">
-                <i class="fa fa-chevron-left"></i> LeetCode-15.3Sum
+              <a href="/2017/11/17/LeetCode-33-Search-in-Rotated-Sorted-Array/" rel="next" title="LeetCode-33.Search in Rotated Sorted Array">
+                <i class="fa fa-chevron-left"></i> LeetCode-33.Search in Rotated Sorted Array
               </a>
             
           </div>
@@ -375,10 +402,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/05/LeetCode-17-Letter-Combinations-of-a-Phone-Number/" rel="prev" title="LeetCode-17.Letter Combinations of a Phone Number">
-                LeetCode-17.Letter Combinations of a Phone Number <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -430,8 +453,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -484,6 +516,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code"><span class="nav-number">2.</span> <span class="nav-text">Code</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
