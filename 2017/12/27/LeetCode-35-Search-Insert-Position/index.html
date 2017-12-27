@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="Talk is cheap.">
 <meta property="og:description" content="DescriptionGiven a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.You may assume no duplicates in the">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-27T14:08:21.737Z">
+<meta property="og:updated_time" content="2017-12-27T14:11:52.395Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode-35.Search Insert Position">
 <meta name="twitter:description" content="DescriptionGiven a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.You may assume no duplicates in the">
@@ -340,7 +340,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Example 3:</div><div class="line">Input: [1,3,5,6], 7</div><div class="line">Output: 4</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Example 4:</div><div class="line">Input: [1,3,5,6], 0</div><div class="line">Output: 0</div></pre></td></tr></table></figure>
 <h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">func searchInsert(nums []int, target int) int &#123;</div><div class="line">    if len(nums) &lt;= 0 &#123;</div><div class="line">        return -1</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    left, right := 0, len(nums) - 1</div><div class="line">    for left &lt;= right &#123;</div><div class="line">        mid := (left + right) / 2</div><div class="line">        if nums[mid] == target &#123;</div><div class="line">            return mid</div><div class="line">        &#125;</div><div class="line">        if nums[mid] &gt; target &#123;</div><div class="line">            right = mid - 1</div><div class="line">        &#125; else &#123;</div><div class="line">            left = mid + 1</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return left</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上面的代码 <code>mid := (left + right) / 2</code> ，如果 <code>left</code> 和 <code>right</code> 很大的话，会出现溢出错误，应改为 <code>mid := left + (right - left) / 2</code> 。</p>
+<p>上面的代码 <code>mid := (left + right) / 2</code> ，如果 <code>left</code> 和 <code>right</code> 很大的话，会出现溢出错误，应改为 <code>mid := left + (right - left) / 2</code> 。前面也出现了类似的问题，现在才发现。。。</p>
 
       
     </div>
